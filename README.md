@@ -1,4 +1,9 @@
-# まいにち行事カレンダー（LP）
+# GYOJI-CHO（まいにち行事カレンダー 〜日本の行事帖〜）LP
+
+| 項目 | 内容 |
+|---|---|
+| 正式名称 | まいにち行事カレンダー 〜日本の行事帖〜 |
+| プロジェクト名 | GYOJI-CHO |
 
 新生児〜小学校入学までの子育て行事を自動カレンダー登録するアプリの、需要検証用ランディングページです。
 
@@ -23,6 +28,7 @@ GitHub Pages デプロイ後:
 - Meta広告用: `https://ryo-chan-k6.github.io/fushime-lp/?ch=meta`
 - Google広告用: `https://ryo-chan-k6.github.io/fushime-lp/?ch=google`
 
+※ リポジトリ名 `fushime-lp` は GitHub / Pages のパス用です。プロダクト名・プロジェクト名は上記のとおりです。
 ※ 独自ドメイン取得後は上記パスをドメイン直下に差し替えてください。
 
 ## LINE CTA（チャンネル別）
