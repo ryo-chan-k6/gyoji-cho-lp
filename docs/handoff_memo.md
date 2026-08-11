@@ -118,7 +118,7 @@ LINE公式アカウントへの友だち登録に一本化（メールフォー�
    - 計測設計：LP訪問→CTA登録率、流入元別CVR比較
 
 4. **ドメイン取得・LP公開**
-   - GitHub Pages で公開済み（`https://ryo-chan-k6.github.io/fushime-lp/`）。独自ドメイン取得は今後の課題
+   - GitHub Pages で公開済み（`https://ryo-chan-k6.github.io/gyoji-cho-lp/`）。独自ドメイン取得は今後の課題
 
 ### 優先度：低（保留）
 5. 案A（不安訴求型）のLPは、B案の広告反応を見てから追加検討する方針（未着手）

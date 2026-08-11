@@ -24,11 +24,11 @@ public/                       # 公開ルート（GitHub Pages）
 
 GitHub Pages デプロイ後:
 
-- LP: `https://ryo-chan-k6.github.io/fushime-lp/`
-- Meta広告用: `https://ryo-chan-k6.github.io/fushime-lp/?ch=meta`
-- Google広告用: `https://ryo-chan-k6.github.io/fushime-lp/?ch=google`
+- LP: `https://ryo-chan-k6.github.io/gyoji-cho-lp/`
+- Meta広告用: `https://ryo-chan-k6.github.io/gyoji-cho-lp/?ch=meta`
+- Google広告用: `https://ryo-chan-k6.github.io/gyoji-cho-lp/?ch=google`
 
-※ リポジトリ名 `fushime-lp` は GitHub / Pages のパス用です。プロダクト名・プロジェクト名は上記のとおりです。
+※ リポジトリ名 / ローカルフォルダ名は `gyoji-cho-lp` です。プロダクト正式名称・プロジェクト名は上記のとおりです。
 ※ 独自ドメイン取得後は上記パスをドメイン直下に差し替えてください。
 
 ## LINE CTA（チャンネル別）
