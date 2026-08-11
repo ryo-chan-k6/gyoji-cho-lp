@@ -7,28 +7,42 @@
 ## 構成
 
 ```
-docs/handoff_memo.md   # Claude からの引継ぎメモ（決定事項・次アクション）
-public/                # 公開用静的ファイル
-  index.html           # LP 本体
-  about.html           # 運営者情報
-  privacy.html         # プライバシーポリシー
-  contact.html         # お問い合わせ（送信未実装）
+docs/handoff_memo.md          # Claude からの引継ぎメモ
+public/                       # 公開ルート（GitHub Pages）
+  index.html                  # LP 本体
+  about.html / privacy.html / contact.html
+  js/line-cta-config.js       # チャンネル別 LINE URL（ここを埋める）
+  js/line-cta.js              # ?ch= / utm_source から URL を解決
 ```
+
+## 公開URL
+
+GitHub Pages デプロイ後:
+
+- LP: `https://ryo-chan-k6.github.io/fushime-lp/`
+- Meta広告用: `https://ryo-chan-k6.github.io/fushime-lp/?ch=meta`
+- Google広告用: `https://ryo-chan-k6.github.io/fushime-lp/?ch=google`
+
+※ 独自ドメイン取得後は上記パスをドメイン直下に差し替えてください。
+
+## LINE CTA（チャンネル別）
+
+1. LINE公式アカウントで流入経路別の友だち追加リンクを発行する
+2. `public/js/line-cta-config.js` の `default` / `meta` / `google` に URL を貼る
+3. 広告のリンク先に `?ch=meta` または `?ch=google` を付ける
+
+URL 未設定時は、CTA はページ内 `#cta` へスクロールします。
 
 ## ローカル確認
 
-`public/` を静的サーバのルートにして開きます。
-
 ```bash
-# Python がある場合
 python3 -m http.server 8080 --directory public
 ```
 
-ブラウザで http://localhost:8080 を開いてください。
+ブラウザで http://localhost:8080 を開き、`?ch=meta` でも動作を確認してください。
 
 ## 技術メモ
 
 - 素の HTML/CSS（フレームワークなし）
 - フォント: Zen Maru Gothic（Google Fonts）
-- CTA: LINE 友だち登録（URL は未設定のプレースホルダ）
 - 詳細な経緯・未着手タスクは `docs/handoff_memo.md` を参照
