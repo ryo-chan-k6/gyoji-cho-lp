@@ -7,7 +7,7 @@
 | 項目 | 内容 |
 |---|---|
 | ホスティング | Cloudflare Pages（無料） |
-| 公開URL | `https://gyoji-cho.pages.dev/`（プロジェクト名による） |
+| 公開URL | `https://gyoji-cho.pages.dev/` |
 | 広告リンク例 | `https://gyoji-cho.pages.dev/?ch=meta` |
 | 独自ドメイン | 需要確認後に検討 |
 | デプロイ | GitHub `main` への push で自動 |
@@ -39,39 +39,42 @@
 
 5. **Save and Deploy**
 
-数分で `https://gyoji-cho.pages.dev/` が開ければ成功。
+---
 
-プロジェクト名が取れない場合は `gyojicho` など近傍名で可（URLが変わるので控える）。
+## 3. 動作確認（完了）
+
+- [x] `https://gyoji-cho.pages.dev/` が開く
+- [x] `/?ch=meta` で CTA が Meta 用 LINE URL になる
+- [x] Console で `__LINE_CTA_CHANNEL__` / `__LINE_CTA_URL__`
+- [x] 実機で友だち追加 → 事前登録フォームまで通る
+- [x] about / privacy / contact が開ける
 
 ---
 
-## 3. 動作確認
+## 4. GitHub Pages を止める
 
-- [ ] `https://gyoji-cho.pages.dev/` が開く
-- [ ] `/?ch=meta` で CTA が Meta 用 LINE URL になる
-- [ ] Console で `__LINE_CTA_CHANNEL__` / `__LINE_CTA_URL__`
-- [ ] 実機で友だち追加 → 事前登録フォームまで通る
-- [ ] about / privacy / contact が開ける
-
----
-
-## 4. GitHub Pages を止める（推奨）
-
-二重公開を避けるため:
-
-1. GitHub リポジトリ → **Settings** → **Pages** → Source を **None**（無効）
-2. 任意: `.github/workflows/deploy-pages.yml` は残しても、Pages 無効ならデプロイ先はない（後で削除でも可）
+1. GitHub リポジトリ → **Settings** → **Pages** → **Unpublish site**
+2. Source が GitHub Actions のままでも、デプロイ用 workflow はリポジトリから削除済み（再公開防止）
 
 ---
 
 ## 5. URL差し替えチェックリスト
 
-Cloudflare 公開後、次を `pages.dev` に更新:
+本番URL:
 
-- [ ] LINE プロフィール「お知らせ」内の LP リンク
-- [ ] LINE Developers プロバイダーのプライバシーポリシー URL（任意）
-- [ ] README / 社内メモ
-- [ ] Instagram / Meta 広告のリンク先（出稿時）
+| 用途 | URL |
+|---|---|
+| LP | `https://gyoji-cho.pages.dev/` |
+| プライバシー | `https://gyoji-cho.pages.dev/privacy.html` |
+| Meta / Instagram | `https://gyoji-cho.pages.dev/?ch=meta` |
+| Google | `https://gyoji-cho.pages.dev/?ch=google` |
+
+差し替え先:
+
+- [ ] LINE プロフィール「お知らせ」内の LP リンク → `https://gyoji-cho.pages.dev/`
+- [ ] LINE Developers プロバイダーのプライバシーポリシー URL → `https://gyoji-cho.pages.dev/privacy.html`
+- [x] README / 運用ドキュメント（リポジトリ側は `pages.dev` に統一済み）
+- [ ] Instagram / Meta 広告のリンク先（出稿時）→ `https://gyoji-cho.pages.dev/?ch=meta`
 
 ---
 

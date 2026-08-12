@@ -119,9 +119,10 @@ LINE公式アカウントへの友だち登録に一本化（メールフォー�
    - 計測設計：LP訪問→CTA登録率、流入元別CVR比較
 
 4. **ドメイン取得・LP公開**
-   - ホスティングは **Cloudflare Pages**（検証中は `*.pages.dev`、独自ドメインは需要確認後）
+   - **公開済み（Cloudflare Pages）**: `https://gyoji-cho.pages.dev/`
+   - Meta / Instagram 広告用: `https://gyoji-cho.pages.dev/?ch=meta`
    - 手順: [`docs/cloudflare-pages-setup.md`](cloudflare-pages-setup.md)
-   - 旧 GitHub Pages（`https://ryo-chan-k6.github.io/gyoji-cho-lp/`）は移行後に無効化
+   - 旧 GitHub Pages は Unpublish（GitHub Actions の Pages デプロイも削除）
 
 ### 優先度：低（保留）
 5. 案A（不安訴求型）のLPは、B案の広告反応を見てから追加検討する方針（未着手）

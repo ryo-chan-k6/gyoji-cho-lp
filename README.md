@@ -35,7 +35,7 @@ public/                           # 公開ルート（Cloudflare Pages）
 
 セットアップ手順: [`docs/cloudflare-pages-setup.md`](docs/cloudflare-pages-setup.md)
 
-※ 旧 GitHub Pages（`ryo-chan-k6.github.io/gyoji-cho-lp/`）は移行後に無効化する。
+※ 本番は Cloudflare Pages（`https://gyoji-cho.pages.dev/`）。旧 GitHub Pages は Unpublish 済み想定。
 
 ## LINE CTA（チャンネル別）
 
