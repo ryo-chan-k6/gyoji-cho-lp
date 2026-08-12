@@ -2,9 +2,11 @@
 
 まいにち行事カレンダー 〜日本の行事帖〜 の LP 側チャンネル別CTA枠の使い方です。LINE公式アカウント開設後にこの手順で接続します。
 
+アカウント開設・L Message・チャットフロー・経路別リンク発行の手順と原稿は [`line-ops-setup.md`](line-ops-setup.md) を参照。
+
 ## 1. 友だち追加リンクを発行する
 
-LINE公式アカウント管理画面（または L Message / Lステップ）で、流入経路別リンクを作成します。
+LINE公式アカウント管理画面（または L Message / Lステップ）で、流入経路別リンクを作成します。詳細な経路名・控表は [`line-ops-setup.md`](line-ops-setup.md) の「4. 流入経路別友だち追加リンク」にあります。
 
 | キー | 用途 | LPのクエリ |
 |---|---|---|
@@ -28,10 +30,14 @@ window.LINE_CTA_CONFIG = {
 
 ## 3. 広告のリンク先
 
-- Meta: `https://<公開ドメイン>/?ch=meta`
-- Google: `https://<公開ドメイン>/?ch=google`
+Cloudflare Pages 公開後（例: プロジェクト名 `gyoji-cho`）:
+
+- Meta / Instagram: `https://gyoji-cho.pages.dev/?ch=meta`
+- Google: `https://gyoji-cho.pages.dev/?ch=google`
 
 `utm_source=facebook|meta|instagram|ig` や `utm_source=google` でも自動判定されます（`ch` 優先）。
+
+公開手順は [`cloudflare-pages-setup.md`](cloudflare-pages-setup.md) を参照。
 
 ## 動作確認
 

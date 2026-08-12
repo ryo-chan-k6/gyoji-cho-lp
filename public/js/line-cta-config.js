@@ -14,9 +14,9 @@
  */
 window.LINE_CTA_CONFIG = {
   /** 自然流入・チャンネル未指定時 */
-  default: '',
-  /** Meta広告用の友だち追加リンク */
-  meta: '',
+  default: 'https://lin.ee/O82VG54',
+  /** Meta広告用の友だち追加リンク（Instagram含む） */
+  meta: 'https://lin.ee/SLnojPz',
   /** Google検索広告用の友だち追加リンク */
-  google: '',
+  google: 'https://lin.ee/t98ZQVP',
 };

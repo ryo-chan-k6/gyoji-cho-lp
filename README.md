@@ -12,32 +12,36 @@
 ## 構成
 
 ```
-docs/handoff_memo.md          # Claude からの引継ぎメモ
-public/                       # 公開ルート（GitHub Pages）
-  index.html                  # LP 本体
+docs/handoff_memo.md              # 引継ぎメモ
+docs/cloudflare-pages-setup.md    # Cloudflare Pages 公開手順
+docs/line-ops-setup.md            # LINE / エルメ運用
+docs/line-cta-setup.md            # チャンネル別 CTA
+public/                           # 公開ルート（Cloudflare Pages）
+  index.html
   about.html / privacy.html / contact.html
-  js/line-cta-config.js       # チャンネル別 LINE URL（ここを埋める）
-  js/line-cta.js              # ?ch= / utm_source から URL を解決
+  js/line-cta-config.js           # チャンネル別 LINE URL
+  js/line-cta.js
 ```
 
 ## 公開URL
 
-GitHub Pages デプロイ後:
+ホスティングは **Cloudflare Pages（無料の `*.pages.dev`）**。独自ドメインは需要検証後に検討。
 
-- LP: `https://ryo-chan-k6.github.io/gyoji-cho-lp/`
-- Meta広告用: `https://ryo-chan-k6.github.io/gyoji-cho-lp/?ch=meta`
-- Google広告用: `https://ryo-chan-k6.github.io/gyoji-cho-lp/?ch=google`
+想定（プロジェクト名 `gyoji-cho` の場合）:
 
-※ リポジトリ名 / ローカルフォルダ名は `gyoji-cho-lp` です。プロダクト正式名称・プロジェクト名は上記のとおりです。
-※ 独自ドメイン取得後は上記パスをドメイン直下に差し替えてください。
+- LP: `https://gyoji-cho.pages.dev/`
+- Meta / Instagram広告: `https://gyoji-cho.pages.dev/?ch=meta`
+- Google広告: `https://gyoji-cho.pages.dev/?ch=google`
+
+セットアップ手順: [`docs/cloudflare-pages-setup.md`](docs/cloudflare-pages-setup.md)
+
+※ 旧 GitHub Pages（`ryo-chan-k6.github.io/gyoji-cho-lp/`）は移行後に無効化する。
 
 ## LINE CTA（チャンネル別）
 
 1. LINE公式アカウントで流入経路別の友だち追加リンクを発行する
 2. `public/js/line-cta-config.js` の `default` / `meta` / `google` に URL を貼る
 3. 広告のリンク先に `?ch=meta` または `?ch=google` を付ける
-
-URL 未設定時は、CTA はページ内 `#cta` へスクロールします。
 
 ## ローカル確認
 
