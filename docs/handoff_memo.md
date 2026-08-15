@@ -254,7 +254,7 @@ GitHub上の運用基盤は有効化済み。
 - `main` 保護：[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713)
 - 初期Issue：[D-001（Issue #3）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/3)、[P0-PROD-01（Issue #4）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/4)
 
-`D-001`は2026年8月16日に確定し、Decision Recordと `P0-PROD-01` のTask Briefを作成済み。次に行うこと：`P0-PROD-01`のProduct validation briefを作成し、Validation Leadのレビューへ進める。
+`D-001`は2026年8月16日に確定し、`P0-PROD-01`のProduct validation briefはValidation Leadのレビューを経て完了した。次に、依存が解消された `P0-MKT-01` と `P0-VAL-01` をReady化する。
 
 ### 最優先：Phase 0
 

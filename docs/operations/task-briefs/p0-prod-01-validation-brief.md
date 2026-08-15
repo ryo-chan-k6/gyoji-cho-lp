@@ -1,6 +1,6 @@
 # Task Brief: `P0-PROD-01 Product validation briefを作成する`
 
-- 状態：Ready
+- 状態：Done
 - 作成日：2026-08-16
 - 更新日：2026-08-16
 - Workstream：Product
@@ -53,14 +53,14 @@
 
 ## 完了条件
 
-- [ ] Primary Userが `D-001`と同じ意味・期間で記載されている
-- [ ] 対象、利用場面、課題、Core Value、Extended Value、対象外が1ページで参照できる
-- [ ] 妊娠期流入を主要Product KPIへ混在させず、出生後Retentionを比較する仮説が明記されている
-- [ ] 「第一子」が利用資格ではなく初期獲得・検証の優先条件であることが明記されている
-- [ ] Instagramの0〜5歳ターゲットとアプリPrimary Userが区別されている
-- [ ] 後続のProduct / Marketing / Data / Legal / Validationタスクへの入力が列挙されている
-- [ ] ReviewerがPassしている
-- [ ] Issue、依存関係、必要な正本文書を更新した
+- [x] Primary Userが `D-001`と同じ意味・期間で記載されている
+- [x] 対象、利用場面、課題、Core Value、Extended Value、対象外が1ページで参照できる
+- [x] 妊娠期流入を主要Product KPIへ混在させず、出生後Retentionを比較する仮説が明記されている
+- [x] 「第一子」が利用資格ではなく初期獲得・検証の優先条件であることが明記されている
+- [x] Instagramの0〜5歳ターゲットとアプリPrimary Userが区別されている
+- [x] 後続のProduct / Marketing / Data / Legal / Validationタスクへの入力が列挙されている
+- [x] ReviewerがPassしている
+- [x] Issue、依存関係、必要な正本文書を更新した
 
 ## 証拠・確認方法
 
@@ -84,7 +84,7 @@
 
 ## Reviewer記録
 
-- 判定：未実施
-- 確認日：
-- 確認内容：
-- 残存リスク：
+- 判定：Pass（軽微Rework後に再レビュー）
+- 確認日：2026-08-16
+- 確認内容：D-001整合、対象・価値・対象外、妊娠期／出生後コホート分離、第一子の非資格化、Instagram分離、5 Workstreamへの引継ぎ、未決定事項の留保を確認。初回レビューで不足していた `P0-MKT-05` への引継ぎを追加後、再レビューでPass。
+- 残存リスク：妊娠期コホートの生存者バイアス、Phase 2観測期間内で1歳までを観測できないコホート、第一子属性の取得要否。`D-004`、`D-007〜010`と後続Validation設計で扱う。
