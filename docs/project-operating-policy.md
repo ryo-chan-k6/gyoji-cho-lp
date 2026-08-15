@@ -1,6 +1,6 @@
 # GYOJI-CHO プロジェクト運用方針
 
-最終更新：2026年8月15日
+最終更新：2026年8月16日
 適用範囲：Phase 0〜2.5の計画、調査、制作、開発、検証
 
 ## 1. 目的
@@ -97,7 +97,7 @@ LP、事業文書、運用設定、将来のiOS MLPを同じリポジトリで�
 
 単独運営のため、GitHub上の必須承認者数は当初 `0` とし、PR作成と責任者による最終マージを必須にする。承認者数を `1` 以上にするのは、PR作成者とは別の継続的な人間Reviewerが参加してからとする。
 
-### 4.4 `main` に推奨するGitHub Ruleset
+### 4.4 `main` のGitHub Ruleset
 
 - Pull Request経由を必須化
 - `docs-quality` を必須Status Checkに設定
@@ -106,7 +106,7 @@ LP、事業文書、運用設定、将来のiOS MLPを同じリポジトリで�
 - Force pushとbranch deletionを禁止
 - 管理者の恒常的なbypassは使わず、緊急時だけ理由を記録
 
-Rulesetの有効化はGitHub上の状態変更であるため、リポジトリ内の準備完了後に責任者の明示承認を得て実施する。
+2026年8月16日に、責任者の明示承認を得て [main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713) を有効化した。変更する場合も責任者の明示承認を要し、変更理由をIssueまたはDecision Recordへ残す。
 
 ## 5. タスク・課題・判断の管理
 
@@ -119,7 +119,7 @@ Rulesetの有効化はGitHub上の状態変更であるため、リポジトリ�
 | 個別実行指示 | `docs/operations/task-briefs/` | 範囲、入力、出力、承認境界、Reviewer |
 | 事業・仕様判断 | `docs/operations/decisions/` | D-IDの決定記録 |
 | Phase完了判定 | `docs/operations/gate-reviews/` | 証拠、反証、残存リスク、責任者判断 |
-| 導入前の暫定状態 | `docs/operations/task-board.md` | GitHub Projectを有効化するまでの最小台帳 |
+| 導入前の暫定状態 | `docs/operations/task-board.md` | GitHub Project移行時点のアーカイブ。以後は更新しない |
 
 Issueは成果物本体の代わりにしない。実行計画は日々の状態管理に使わない。Chatの発言だけでD-IDを確定しない。
 
@@ -251,8 +251,8 @@ Phase 0の期限・責任者稼働・費用上限は2026年8月16日に確定し
 
 1. [x] 本方針、`AGENTS.md`、テンプレート、自動チェックをリポジトリへ反映する
 2. [x] 責任者が `D-018〜020` を確定する
-3. [ ] GitHub Issues / Projectを作り、`task-board.md` から状態管理を移す
-4. [ ] 責任者の承認後、`main` Rulesetと必須Status Checkを有効化する
+3. [x] [GitHub Project #6](https://github.com/users/ryo-chan-k6/projects/6) を作り、`task-board.md` から状態管理を移す
+4. [x] 責任者の承認後、[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713) と必須 `docs-quality` Checkを有効化する
 5. [ ] `D-001`を確定し、`P0-PROD-01`のTask Briefを作成してPhase 0実行を開始する
 6. [ ] 最初の3〜5タスク後に、WIP、テンプレート、レビュー工数を振り返る
 

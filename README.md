@@ -33,7 +33,7 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 - [`docs/phase-0-2-execution-plan.md`](docs/phase-0-2-execution-plan.md) — 5 Workstreamのタスク、成果物、依存関係、完了条件
 - [`docs/ai-agent-operating-model.md`](docs/ai-agent-operating-model.md) — AI PM、Workstream Lead、レビュー、承認境界
 - [`docs/project-operating-policy.md`](docs/project-operating-policy.md) — リポジトリ、ブランチ、PR、タスク、正本、品質Gate、権限の運用方針
-- [`docs/operations/README.md`](docs/operations/README.md) — Task Brief、D-ID、Gate、リスク、暫定タスクボードの入口
+- [`docs/operations/README.md`](docs/operations/README.md) — Task Brief、D-ID、Gate、リスク、移行済みタスクボードの入口
 - [`docs/monetization-scenarios.md`](docs/monetization-scenarios.md) — 収益モデル、悲観〜楽観シナリオ、Unit Economics、投資Gate
 - [`docs/instagram-strategy.md`](docs/instagram-strategy.md) — Instagramアカウントの確定運用方針、ターゲット、プロフィール、投稿カテゴリ、ビジュアル、KPI
 - [`docs/content-production-guidelines.md`](docs/content-production-guidelines.md) — Instagram/iOS共通のAIコンテンツ制作、Fact Check、出典・著作権・素材管理ルール
@@ -83,7 +83,7 @@ AGENTS.md                             # リポジトリ内で働くAIへの共�
 pwsh ./scripts/check-docs.ps1
 ```
 
-GitHub Projectと `main` Rulesetは、リポジトリ内の準備とは別に、責任者の明示承認後に有効化します。
+GitHub上の実行状態は [GYOJI-CHO Phase 0-2 Execution](https://github.com/users/ryo-chan-k6/projects/6) で管理します。`main` には [main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713) を有効化しており、PR、`docs-quality`、未解決Conversationの解消、Squash mergeを必須とします。
 
 ## LP 公開URL
 
