@@ -1,0 +1,24 @@
+name: Repository quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  docs-quality:
+    name: docs-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Validate documentation and governance files
+        shell: pwsh
+        run: ./scripts/check-docs.ps1
+      - name: Validate Codex agent definitions
+        shell: bash
+        run: python3 -c "import pathlib,tomllib; files=list(pathlib.Path('.codex/agents').glob('*.toml')); [tomllib.loads(p.read_text(encoding='utf-8')) for p in files]; print(f'Validated {len(files)} agent definitions')"

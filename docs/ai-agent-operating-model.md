@@ -2,6 +2,7 @@
 
 最終更新：2026年8月15日
 対象計画：[`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md)
+運用方針：[`project-operating-policy.md`](project-operating-policy.md)
 
 ## 1. 目的
 
@@ -114,7 +115,7 @@ Backlog → Ready → In Progress → Review → Done
 
 ## 6. Task Brief
 
-AI PMは、実行を開始する前に最低限次を指定する。
+AI PMは、実行を開始する前に最低限次を指定する。保存時は [`operations/task-briefs/TEMPLATE.md`](operations/task-briefs/TEMPLATE.md) を使用する。
 
 ```markdown
 # Task Brief
@@ -182,6 +183,8 @@ Legal Leadの成果は法的助言や専門家の最終確認を代替しない�
 ## 10. 判断とエスカレーション
 
 [`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md) のD-IDは責任者が別Chatで決める。AI PMは、判断を求める際に次のDecision Packを作成する。
+
+決定後は [`operations/decisions/TEMPLATE.md`](operations/decisions/TEMPLATE.md) を使ってリポジトリへ記録し、影響する正本文書、Task Brief、Issueを同じ変更単位で更新する。
 
 ```markdown
 # Decision Pack
@@ -266,16 +269,20 @@ AI PM、Workstream Lead、Gate Reviewerのいずれも、責任者に代わっ�
 
 ## 14. 初期導入順
 
-1. AI PMの役割と承認境界を固定する
-2. 5 Workstream Leadの役割定義を作る
-3. Task BriefとDecision Packの形式を運用へ導入する
-4. `P0-PROD-01`からWIP制限付きで実行する
-5. 最初の3〜5タスクで、分担粒度、レビュー工数、手戻りを確認する
-6. Specialistの固定化はせず、必要性が繰り返し確認された役割だけ再利用可能なエージェント定義へ昇格する
+1. `AGENTS.md` と `.codex/agents/` でAI PM、5 Workstream Lead、Gate Reviewerの役割と承認境界を適用する
+2. Issue / PR / Task Brief / Decision / Gateテンプレートを使う
+3. `D-018〜020` でPhase 0の時間、責任者稼働、費用上限を決める
+4. GitHub Issues / Projectと `main` Rulesetを責任者承認後に有効化する
+5. `D-001`確定後、`P0-PROD-01`からWIP制限付きで実行する
+6. 最初の3〜5タスクで、分担粒度、レビュー工数、手戻りを確認する
+7. Specialistの固定化はせず、必要性が繰り返し確認された役割だけ再利用可能なエージェント定義へ昇格する
+
+プロジェクト固有エージェント定義ではモデルを固定しない。利用環境の既定値を継承し、タスクの費用・速度・品質要求に応じた変更が必要な場合だけ責任者と見直す。
 
 ## 15. 公式参考資料
 
 - [OpenAI: Subagents](https://developers.openai.com/codex/agent-configuration/subagents)
-- [OpenAI: Model guidance — autonomy and approval boundaries](https://developers.openai.com/api/docs/guides/latest-model#define-autonomy-and-approval-boundaries)
+- [OpenAI: AGENTS.md](https://developers.openai.com/codex/agent-configuration/agents-md)
+- [OpenAI: Security](https://developers.openai.com/codex/agent-approvals-security)
 
 公式ガイドでは、独立した境界の明確な作業はサブエージェントへ分担しやすい一方、同じ可変状態への並行書き込みは競合と調整負荷を生みやすいとされている。本運営モデルでは、その考え方をWorkstream、WIP制限、単一編集担当、独立レビューへ反映している。

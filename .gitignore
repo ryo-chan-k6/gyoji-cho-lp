@@ -16,3 +16,11 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+# Apple signing and API credentials
+*.p8
+*.p12
+*.mobileprovision
+*.provisionprofile
+**/Secrets.xcconfig
+**/*.secrets.xcconfig

@@ -4,6 +4,7 @@
 名称更新：2026年8月11日
 事業戦略初版：2026年8月14日
 ロードマップ全面更新：2026年8月15日
+プロジェクト運用基盤追加：2026年8月15日
 
 ---
 
@@ -25,7 +26,7 @@
 - Phase 2の後に定性検証を行い、定量＋定性でGo / Pivot / Stopを判断する
 - 子どもの情報はLocal-firstを基本とし、初期はアカウント・独自サーバーを持たない
 
-事業全体の最新方針は [`business-roadmap.md`](business-roadmap.md) を正本とする。Phase 0〜2のプロダクト検証詳細は [`business-strategy.md`](business-strategy.md)、実行タスクは [`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md)、AIエージェント運営は [`ai-agent-operating-model.md`](ai-agent-operating-model.md) を正本とする。
+事業全体の最新方針は [`business-roadmap.md`](business-roadmap.md) を正本とする。Phase 0〜2のプロダクト検証詳細は [`business-strategy.md`](business-strategy.md)、実行タスクは [`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md)、AIエージェント運営は [`ai-agent-operating-model.md`](ai-agent-operating-model.md)、リポジトリ・タスク・品質・権限の運用は [`project-operating-policy.md`](project-operating-policy.md) を正本とする。
 
 ---
 
@@ -214,6 +215,10 @@ CPAが高いだけでプロダクトをKillせず、CTRが高いだけでGoに�
 | `docs/business-strategy.md` | Phase 0〜2のプロダクト検証戦略 | MLP・検証・Phase Gateの詳細 |
 | `docs/phase-0-2-execution-plan.md` | Phase 0〜2.5の実行計画 | タスク管理の正本 |
 | `docs/ai-agent-operating-model.md` | AIエージェント運営体制・実行プロセス | 役割、WIP、レビュー、承認境界の正本 |
+| `docs/project-operating-policy.md` | プロジェクト運用 | リポジトリ、ブランチ、Issue、PR、正本、品質、外部承認の正本 |
+| `docs/operations/` | 実行記録とテンプレート | Task Brief、D-ID、Gate、リスク、暫定タスクボード |
+| `AGENTS.md` / `.codex/agents/` | AI実行設定 | 共通ガードレールとAI PM・Lead・Gate Reviewerの定義 |
+| `.github/` | GitHub運用設定 | Issue / PRテンプレート、CODEOWNERS、文書品質チェック |
 | `docs/monetization-scenarios.md` | 収益化シナリオ | Unit Economics・投資Gate |
 | `docs/instagram-strategy.md` | Instagram運用方針 | SNS領域の正本 |
 | `docs/content-production-guidelines.md` | 共通コンテンツ制作ルール | Fact Check・出典・著作権・素材管理 |
@@ -228,6 +233,13 @@ CPAが高いだけでプロダクトをKillせず、CTRが高いだけでGoに�
 ---
 
 ## 9. 次にやること
+
+### 運用開始前
+
+1. `D-018〜020` でPhase 0の期限、責任者稼働、費用上限を決める
+2. GitHub Issues / Projectを作成し、暫定 `docs/operations/task-board.md` から状態管理を移す
+3. 責任者の承認後、`main` Rulesetと必須 `docs-quality` Checkを有効化する
+4. `D-001`を確定し、`P0-PROD-01`のTask Briefを作成する
 
 ### 最優先：Phase 0
 

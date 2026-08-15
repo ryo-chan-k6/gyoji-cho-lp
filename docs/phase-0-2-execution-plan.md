@@ -4,6 +4,7 @@
 上位ロードマップ：[`business-roadmap.md`](business-roadmap.md)
 対象戦略：[`business-strategy.md`](business-strategy.md)
 運営モデル：[`ai-agent-operating-model.md`](ai-agent-operating-model.md)
+運用方針：[`project-operating-policy.md`](project-operating-policy.md)
 対象範囲：Phase 0、0.5、1、2、およびPhase 2の定性サブフェーズである2.5
 
 ## 1. 目的
@@ -60,6 +61,8 @@
 - ValidationとPhase Gateの検証は開発・獲得担当から独立させる
 - D-ID、予算、公開、契約、個人情報、Go / Pivot / Stopは責任者が判断する
 - 詳細な役割、権限、Task Brief、Decision Pack、Gate運用は [`ai-agent-operating-model.md`](ai-agent-operating-model.md) に従う
+- タスク状態、ブランチ、PR、正本、品質Gate、Secrets、外部承認は [`project-operating-policy.md`](project-operating-policy.md) に従う
+- 日々の状態はGitHub Issues / Projectで管理し、この文書のタスク表へ状態列を追加しない
 
 ---
 
@@ -393,6 +396,9 @@ P25 利用者・離脱者インタビュー → 定量＋定性統合
 | D-015 | 定性調査 | 対象群、人数、連絡方法、録音、謝礼 | P0-VAL-05完了前 | P0-VAL-05、Phase 2.5 |
 | D-016 | 最終判定権限 | Go / Pivot / Stopの判断者、例外承認、投資上限 | P0-VAL-04完了前 | P25-VAL-04、P25-GATE-01 |
 | D-017 | 準備意向CTA | 非提携状態で何を表示し、どのクリックを計測するか | P0-PROD-04完了前 | P0-PROD-04、P0-DATA-03、Phase 1 Product |
+| D-018 | Phase 0の時間枠 | 目標終了日、計画見直し日 | Phase 0週次計画の確定前 | 期限付きの運用計画 |
+| D-019 | 責任者の稼働枠 | 週あたりの確認時間、判断SLA | Phase 0週次計画の確定前 | 週次コミットメント、Decision Needed処理 |
+| D-020 | Phase 0の費用上限 | AI、調査、ツール、外注の上限とアラート値 | 新規有料利用前 | Phase 0の新規有料利用 |
 
 ### 推奨する別Chatの分け方
 
@@ -405,6 +411,7 @@ P25 利用者・離脱者インタビュー → 定量＋定性統合
 | E | D-013 | 行事コンテンツ品質・地域差 |
 | F | D-015 | 定性調査 |
 | G | D-017 | 準備意向と将来の送客接続 |
+| H | D-018〜020 | Phase 0の期限、責任者稼働、費用上限 |
 
 ### 判断記録の形式
 
