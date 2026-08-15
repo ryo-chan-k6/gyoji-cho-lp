@@ -110,7 +110,7 @@ Backlog → Ready → In Progress → Review → Done
 5. Leadが成果物と根拠をReviewへ提出する
 6. 作成者とは別のReviewerが完了条件に照らしてPass / Reworkを返す
 7. AI PMが横断整合性を確認し、通常タスクをDoneにする
-8. 判断が必要ならDecision Packを責任者へ提示し、別Chatで決定する
+8. 判断が必要ならDecision Packを責任者へ提示し、原則として本Chat内の判断セッションで決定する
 9. Gate到達時はGate Reviewerが反証を含めてレビューし、責任者が最終判断する
 
 ## 6. Task Brief
@@ -182,7 +182,7 @@ Legal Leadの成果は法的助言や専門家の最終確認を代替しない�
 
 ## 10. 判断とエスカレーション
 
-[`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md) のD-IDは責任者が別Chatで決める。AI PMは、判断を求める際に次のDecision Packを作成する。
+[`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md) のD-IDは、原則として本Chat内で責任者が決める。AI PMは論点が混ざらないよう判断テーマを区切り、判断を求める際に次のDecision Packを作成する。
 
 決定後は [`operations/decisions/TEMPLATE.md`](operations/decisions/TEMPLATE.md) を使ってリポジトリへ記録し、影響する正本文書、Task Brief、Issueを同じ変更単位で更新する。
 

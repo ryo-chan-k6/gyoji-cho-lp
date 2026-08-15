@@ -6,6 +6,7 @@
 ロードマップ全面更新：2026年8月15日
 プロジェクト運用基盤追加：2026年8月15日
 Phase 0時間・稼働・費用上限確定：2026年8月16日
+GitHub Project・Ruleset有効化：2026年8月16日
 
 ---
 
@@ -217,7 +218,7 @@ CPAが高いだけでプロダクトをKillせず、CTRが高いだけでGoに�
 | `docs/phase-0-2-execution-plan.md` | Phase 0〜2.5の実行計画 | タスク管理の正本 |
 | `docs/ai-agent-operating-model.md` | AIエージェント運営体制・実行プロセス | 役割、WIP、レビュー、承認境界の正本 |
 | `docs/project-operating-policy.md` | プロジェクト運用 | リポジトリ、ブランチ、Issue、PR、正本、品質、外部承認の正本 |
-| `docs/operations/` | 実行記録とテンプレート | Task Brief、D-ID、Gate、リスク、暫定タスクボード |
+| `docs/operations/` | 実行記録とテンプレート | Task Brief、D-ID、Gate、リスク、移行済みタスクボード |
 | `AGENTS.md` / `.codex/agents/` | AI実行設定 | 共通ガードレールとAI PM・Lead・Gate Reviewerの定義 |
 | `.github/` | GitHub運用設定 | Issue / PRテンプレート、CODEOWNERS、文書品質チェック |
 | `docs/monetization-scenarios.md` | 収益化シナリオ | Unit Economics・投資Gate |
@@ -246,9 +247,13 @@ CPAが高いだけでプロダクトをKillせず、CTRが高いだけでGoに�
 
 次に行うこと：
 
-1. GitHub Issues / Projectを作成し、暫定 `docs/operations/task-board.md` から状態管理を移す
-2. 責任者の承認後、`main` Rulesetと必須 `docs-quality` Checkを有効化する
-3. `D-001`を確定し、`P0-PROD-01`のTask Briefを作成する
+GitHub上の運用基盤は有効化済み。
+
+- 実行状態：[GitHub Project #6](https://github.com/users/ryo-chan-k6/projects/6)
+- `main` 保護：[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713)
+- 初期Issue：[D-001（Issue #3）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/3)、[P0-PROD-01（Issue #4）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/4)
+
+次に行うこと：`D-001`を本Chatで確定し、Decision Recordと `P0-PROD-01` のTask Briefを作成する。
 
 ### 最優先：Phase 0
 
