@@ -253,7 +253,7 @@ Phase 0の期限・責任者稼働・費用上限は2026年8月16日に確定し
 2. [x] 責任者が `D-018〜020` を確定する
 3. [x] [GitHub Project #6](https://github.com/users/ryo-chan-k6/projects/6) を作り、`task-board.md` から状態管理を移す
 4. [x] 責任者の承認後、[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713) と必須 `docs-quality` Checkを有効化する
-5. [ ] `D-001`を確定し、`P0-PROD-01`のTask Briefを作成してPhase 0実行を開始する
+5. [x] [`D-001`](operations/decisions/d-001-primary-user.md)を確定し、[`P0-PROD-01`](operations/task-briefs/p0-prod-01-validation-brief.md)のTask Briefを作成してPhase 0実行を開始する
 6. [ ] 最初の3〜5タスク後に、WIP、テンプレート、レビュー工数を振り返る
 
 ## 12. 公式参考資料
