@@ -1,4 +1,4 @@
-# GYOJI-CHO（まいにち行事カレンダー 〜日本の行事帖〜）LP
+# GYOJI-CHO（まいにち行事カレンダー 〜日本の行事帖〜）事業検証・LP
 
 | 項目 | 内容 |
 |---|---|
@@ -11,6 +11,8 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 
 ユーザー獲得の入口は「赤ちゃんの行事」に置きつつ、将来的にはお正月・節分・七夕・お盆・十五夜など、家族で体験できる日本の伝統行事・風習まで扱います。
 
+最終形は、**「日本の子育て行事OS／家族行事の意思決定と準備のプラットフォーム」**です。子どもの情報を一度登録すれば、家庭ごとの行事について「いつ・何をする・何を準備する」が分かり、家族で共有しながら予約・購買まで進められる体験を目指します。主収益の仮説は、準備・予約・購買に関する**他社への送客／提携収益**です。
+
 ## 現在のフェーズ
 
 現在はアプリ本体の本格開発前で、**Phase 0〜0.5（事業仮説固定・訴求検証・iOS Validation Release設計）**の段階です。
@@ -22,9 +24,14 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 - Web簡易MVP: 本来の通知・継続体験を十分再現できないため、本需要検証には使用しない
 - Marketing: Instagramは当面アプリと切り離し、**独立したメディア型アカウントとしてSNS単体の価値提供・オーディエンス形成・潜在興味/課題の学習に集中する**。アプリ名・開発中アプリには言及しない
 
+> 事業仮説固定 → 少額広告でメッセージ検証 → iOS MLP（Validation Release）→ App Store経由のProduct Validation → 定性検証 → 正式v1 → Monetization Validation
+
 詳細:
 
 - [`docs/business-roadmap.md`](docs/business-roadmap.md) — 事業ロードマップ、プロダクト/マーケティング/収益化、データ方針
+- [`docs/business-strategy.md`](docs/business-strategy.md) — Phase 0〜2の検証戦略、MLP、Phase Gateの詳細
+- [`docs/phase-0-2-execution-plan.md`](docs/phase-0-2-execution-plan.md) — 5 Workstreamのタスク、成果物、依存関係、完了条件
+- [`docs/ai-agent-operating-model.md`](docs/ai-agent-operating-model.md) — AI PM、Workstream Lead、レビュー、承認境界
 - [`docs/monetization-scenarios.md`](docs/monetization-scenarios.md) — 収益モデル、悲観〜楽観シナリオ、Unit Economics、投資Gate
 - [`docs/instagram-strategy.md`](docs/instagram-strategy.md) — Instagramアカウントの確定運用方針、ターゲット、プロフィール、投稿カテゴリ、ビジュアル、KPI
 - [`docs/content-production-guidelines.md`](docs/content-production-guidelines.md) — Instagram/iOS共通のAIコンテンツ制作、Fact Check、出典・著作権・素材管理ルール
@@ -33,6 +40,9 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 
 ```text
 docs/business-roadmap.md             # 最新の事業ロードマップ（戦略の正本）
+docs/business-strategy.md            # Phase 0〜2の検証戦略・MLP・Phase Gate詳細
+docs/phase-0-2-execution-plan.md     # Phase 0〜2.5のWorkstream別実行計画
+docs/ai-agent-operating-model.md     # AIエージェントを使った運営体制・実行プロセス
 docs/monetization-scenarios.md       # 収益化シナリオ・Unit Economics
 docs/instagram-strategy.md           # Instagram運用方針（SNS領域の正本）
 docs/content-production-guidelines.md # Instagram/iOS共通のコンテンツ制作・出典管理
@@ -63,6 +73,8 @@ public/                              # 公開ルート（Cloudflare Pages）
 
 ## LINE CTA（補助検証・事前登録）
 
+既存のLINE事前登録導線は補助的な連絡・学習手段として保持しています。**LINE登録CVRは、iOSプロダクト需要の主要Gateには使用しません。**
+
 1. LINE公式アカウントで流入経路別の友だち追加リンクを発行する
 2. `public/js/line-cta-config.js` の `default` / `meta` / `google` に URL を貼る
 3. 広告のリンク先に `?ch=meta` または `?ch=google` を付ける
@@ -83,3 +95,6 @@ python3 -m http.server 8080 --directory public
 - フォント: Zen Maru Gothic（Google Fonts）
 - iOS Validation Releaseの技術設計は今後別途定義
 - 子どもの正確な生年月日・性別・地域等はLocal-firstを基本とし、事業分析には粗粒度コホート情報を利用する方針
+- 事業全体の最新ロードマップは `docs/business-roadmap.md`、Phase 0〜2の検証詳細は `docs/business-strategy.md` を参照
+- AIエージェント運営体制は `docs/ai-agent-operating-model.md` を参照
+- 詳細な経緯・未着手タスクは `docs/handoff_memo.md` を参照
