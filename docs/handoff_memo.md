@@ -5,6 +5,7 @@
 事業戦略初版：2026年8月14日
 ロードマップ全面更新：2026年8月15日
 プロジェクト運用基盤追加：2026年8月15日
+Phase 0時間・稼働・費用上限確定：2026年8月16日
 
 ---
 
@@ -236,10 +237,18 @@ CPAが高いだけでプロダクトをKillせず、CTRが高いだけでGoに�
 
 ### 運用開始前
 
-1. `D-018〜020` でPhase 0の期限、責任者稼働、費用上限を決める
-2. GitHub Issues / Projectを作成し、暫定 `docs/operations/task-board.md` から状態管理を移す
-3. 責任者の承認後、`main` Rulesetと必須 `docs-quality` Checkを有効化する
-4. `D-001`を確定し、`P0-PROD-01`のTask Briefを作成する
+確定済みの運用枠：
+
+- Phase 0：2026年8月17日〜9月6日。主要成果物は8月30日目標、前倒し完了可
+- 責任者稼働：週28時間。通常判断SLAは1営業日
+- Phase 0追加支出：0円。外注なし、既存AIサービス内で実行
+- Phase 0.5広告費：現時点で約5,000円を想定。正式確定は `D-010` で行う
+
+次に行うこと：
+
+1. GitHub Issues / Projectを作成し、暫定 `docs/operations/task-board.md` から状態管理を移す
+2. 責任者の承認後、`main` Rulesetと必須 `docs-quality` Checkを有効化する
+3. `D-001`を確定し、`P0-PROD-01`のTask Briefを作成する
 
 ### 最優先：Phase 0
 
