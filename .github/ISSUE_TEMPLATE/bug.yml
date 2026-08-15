@@ -1,0 +1,48 @@
+name: 不具合・運用事故
+description: LP、iOS、計測、文書、公開、運用の不具合を記録する
+title: "[BUG] "
+body:
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 重大度
+      options:
+        - Critical（個人情報・秘密情報・課金・公開事故）
+        - High（主要導線・計測・表示の重大不具合）
+        - Medium（回避可能な機能・運用不具合）
+        - Low（軽微な文言・見た目・文書不整合）
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: 発生したこと
+      description: 期待ではなく観測事実を記載
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する状態
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 再現手順・環境・時刻
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影響範囲
+      description: ユーザー、データ、期間、公開面、費用
+    validations:
+      required: true
+  - type: textarea
+    id: containment
+    attributes:
+      label: 暫定対応・外部承認
+      description: 個人情報・秘密情報の場合は追加露出停止と資格情報失効を優先
+    validations:
+      required: true

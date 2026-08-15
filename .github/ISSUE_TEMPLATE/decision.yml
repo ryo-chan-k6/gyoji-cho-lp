@@ -1,0 +1,59 @@
+name: 判断事項
+description: 責任者が別Chatで決めるD-IDを管理する
+title: "[D-XXX] "
+body:
+  - type: input
+    id: decision_id
+    attributes:
+      label: 判断ID
+      placeholder: D-001
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 判断期限
+      description: 日付または「P0-PROD-01完了前」等
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 決めること
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 背景・制約・現在の事実
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: 選択肢と推奨案
+      description: 各案の利点・欠点、AI PMの推奨、不確実性
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影響タスク・未決時の制約
+    validations:
+      required: true
+  - type: textarea
+    id: record
+    attributes:
+      label: 決定記録の保存先
+      placeholder: docs/operations/decisions/d-001-primary-user.md
+    validations:
+      required: true
+  - type: checkboxes
+    id: decision_check
+    attributes:
+      label: 確定時の確認
+      options:
+        - label: 責任者の決定、日付、根拠、見直し条件を記録する
+          required: true
+        - label: 影響する正本文書、Task、Issueを更新する
+          required: true

@@ -32,6 +32,8 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 - [`docs/business-strategy.md`](docs/business-strategy.md) — Phase 0〜2の検証戦略、MLP、Phase Gateの詳細
 - [`docs/phase-0-2-execution-plan.md`](docs/phase-0-2-execution-plan.md) — 5 Workstreamのタスク、成果物、依存関係、完了条件
 - [`docs/ai-agent-operating-model.md`](docs/ai-agent-operating-model.md) — AI PM、Workstream Lead、レビュー、承認境界
+- [`docs/project-operating-policy.md`](docs/project-operating-policy.md) — リポジトリ、ブランチ、PR、タスク、正本、品質Gate、権限の運用方針
+- [`docs/operations/README.md`](docs/operations/README.md) — Task Brief、D-ID、Gate、リスク、暫定タスクボードの入口
 - [`docs/monetization-scenarios.md`](docs/monetization-scenarios.md) — 収益モデル、悲観〜楽観シナリオ、Unit Economics、投資Gate
 - [`docs/instagram-strategy.md`](docs/instagram-strategy.md) — Instagramアカウントの確定運用方針、ターゲット、プロフィール、投稿カテゴリ、ビジュアル、KPI
 - [`docs/content-production-guidelines.md`](docs/content-production-guidelines.md) — Instagram/iOS共通のAIコンテンツ制作、Fact Check、出典・著作権・素材管理ルール
@@ -44,6 +46,8 @@ docs/business-roadmap.md              # 最新の事業ロードマップ（戦�
 docs/business-strategy.md             # Phase 0〜2の検証戦略・MLP・Phase Gate詳細
 docs/phase-0-2-execution-plan.md      # Phase 0〜2.5のWorkstream別実行計画
 docs/ai-agent-operating-model.md      # AIエージェントを使った運営体制・実行プロセス
+docs/project-operating-policy.md      # リポジトリ・ブランチ・タスク・品質・権限の運用正本
+docs/operations/                      # Task Brief・判断・Gate・リスク・暫定状態
 docs/monetization-scenarios.md        # 収益化シナリオ・Unit Economics
 docs/instagram-strategy.md            # Instagram運用方針（SNS領域の正本）
 docs/content-production-guidelines.md # Instagram/iOS共通のコンテンツ制作・出典管理
@@ -57,9 +61,29 @@ public/                               # 公開ルート（Cloudflare Pages）
   about.html / privacy.html / contact.html
   js/line-cta-config.js               # チャンネル別 LINE URL
   js/line-cta.js
+.codex/agents/                       # AI PM・5 Workstream Lead・Gate Reviewerの定義
+.github/                             # Issue・PR・CODEOWNERS・品質チェック
+scripts/check-docs.ps1               # 文書リンク・必須ファイル・競合マーカー確認
+AGENTS.md                             # リポジトリ内で働くAIへの共通指示
 ```
 
-> 事業全体の方針・フェーズ判断については `business-roadmap.md` を最新の正本とします。Instagram運用の具体方針については `instagram-strategy.md` を正本とし、コンテンツ制作・情報収集・出典管理については `content-production-guidelines.md`、SNS用キャラクターとイラストの量産基準については `visual-character-guide.md` を共通ルールとします。他文書に旧SNS方針が残る場合はこれらを優先します。`handoff_memo.md` やLINE関連文書にはLP需要検証フェーズ当時の記述が残る場合があります。
+> 事業全体は `business-roadmap.md`、Phase 0〜2の検証戦略は `business-strategy.md`、タスク定義は `phase-0-2-execution-plan.md`、プロジェクト運用は `project-operating-policy.md` を正本とします。Instagramは `instagram-strategy.md`、コンテンツ制作・出典管理は `content-production-guidelines.md`、SNS用キャラクターとイラストは `visual-character-guide.md` を各領域の正本とします。正本間の優先順位と変更方法は運用方針に従います。
+
+## プロジェクト運用
+
+- Phase 2.5までは単一リポジトリで運用し、将来のiOS MLPは `apps/ios/` に追加する
+- `main` への直接pushは行わず、1 Task IDごとの短命ブランチとPRを使う
+- Phase計画は `phase-0-2-execution-plan.md`、日々の状態はGitHub Issues / Project、個別指示はTask Briefで管理する
+- D-ID、予算、契約、公開、個人情報、Go / Pivot / Stopは責任者が判断する
+- 外部変更は明示承認後に行い、最終マージは責任者が行う
+
+ローカルの文書・運用チェック：
+
+```powershell
+pwsh ./scripts/check-docs.ps1
+```
+
+GitHub Projectと `main` Rulesetは、リポジトリ内の準備とは別に、責任者の明示承認後に有効化します。
 
 ## LP 公開URL
 
@@ -99,4 +123,5 @@ python3 -m http.server 8080 --directory public
 - 子どもの正確な生年月日・性別・地域等はLocal-firstを基本とし、事業分析には粗粒度コホート情報を利用する方針
 - 事業全体の最新ロードマップは `docs/business-roadmap.md`、Phase 0〜2の検証詳細は `docs/business-strategy.md` を参照
 - AIエージェント運営体制は `docs/ai-agent-operating-model.md` を参照
+- リポジトリ、タスク、品質、権限の運用は `docs/project-operating-policy.md` を参照
 - 詳細な経緯・未着手タスクは `docs/handoff_memo.md` を参照

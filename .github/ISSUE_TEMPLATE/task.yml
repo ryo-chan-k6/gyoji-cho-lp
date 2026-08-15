@@ -1,0 +1,103 @@
+name: 実行タスク
+description: Phase 0〜2.5のTask IDまたは運用タスクを実行する
+title: "[TASK-ID] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        実行計画のタスク定義を複製せず、このIssueでは担当・状態・期限・ブロッカーを管理します。Readyへ移す前にTask Briefを作成してください。
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: 例：P0-PROD-01、OPS-002
+      placeholder: P0-PROD-01
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - Phase 0
+        - Phase 0.5
+        - Phase 1
+        - Phase 2
+        - Phase 2.5
+        - Operations
+    validations:
+      required: true
+  - type: dropdown
+    id: workstream
+    attributes:
+      label: Workstream
+      options:
+        - Product
+        - Marketing
+        - Data
+        - Legal
+        - Validation
+        - Operations
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 目的
+      description: このタスクで確かめること、または実現する状態
+    validations:
+      required: true
+  - type: input
+    id: task_brief
+    attributes:
+      label: Task Brief
+      description: リポジトリ内のパス。未作成ならDraftの保存予定先
+      placeholder: docs/operations/task-briefs/p0-prod-01-validation-brief.md
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依存関係・D-ID
+      description: 先行Task ID、必要なD-ID、外部入力。なければ「なし」
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: 成果物と保存場所
+      description: ファイル、画面、分析、証拠の保存先
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: 実行計画とTask Briefから転記または参照
+    validations:
+      required: true
+  - type: textarea
+    id: approvals
+    attributes:
+      label: 承認・データ・公開
+      description: 人間承認が必要な操作、扱うデータ、外部状態変更。なければ「なし」
+    validations:
+      required: true
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer
+      description: 作成者以外のReviewerまたはGate Reviewer
+    validations:
+      required: true
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Ready確認
+      options:
+        - label: 依存関係と必要なD-IDが確定している
+          required: true
+        - label: Task Brief、担当、Reviewer、成果物、完了条件がある
+          required: true
+        - label: 許可操作と人間承認が必要な操作を区別した
+          required: true
