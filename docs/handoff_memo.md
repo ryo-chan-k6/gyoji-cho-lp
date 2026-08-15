@@ -7,6 +7,7 @@
 プロジェクト運用基盤追加：2026年8月15日
 Phase 0時間・稼働・費用上限確定：2026年8月16日
 GitHub Project・Ruleset有効化：2026年8月16日
+D-001最優先ユーザー確定：2026年8月16日
 
 ---
 
@@ -253,7 +254,7 @@ GitHub上の運用基盤は有効化済み。
 - `main` 保護：[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713)
 - 初期Issue：[D-001（Issue #3）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/3)、[P0-PROD-01（Issue #4）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/4)
 
-次に行うこと：`D-001`を本Chatで確定し、Decision Recordと `P0-PROD-01` のTask Briefを作成する。
+`D-001`は2026年8月16日に確定し、Decision Recordと `P0-PROD-01` のTask Briefを作成済み。次に行うこと：`P0-PROD-01`のProduct validation briefを作成し、Validation Leadのレビューへ進める。
 
 ### 最優先：Phase 0
 
@@ -286,7 +287,9 @@ GitHub上の運用基盤は有効化済み。
 
 ### ターゲット
 
-- 第一子の親を主対象とする
+- 第一子の妊娠後期から満1歳の誕生日までの家庭で、赤ちゃんの行事の情報収集・判断・準備を担う保護者をPrimary Userとする
+- 集計上は妊娠後期と出生後0〜11か月を分け、妊娠期流入から出生後利用への移行・Retentionを別コホートで追跡する
+- 第二子以降や満1歳以降の利用は制限しないが、初期広告・主要KPI・インタビューの中心から外す
 - 入口は当面「赤ちゃんの行事」に集中する
 - 妊娠中〜出産までの総合育児情報サービスにはしない
 
