@@ -254,7 +254,7 @@ GitHub上の運用基盤は有効化済み。
 - `main` 保護：[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713)
 - 初期Issue：[D-001（Issue #3）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/3)、[P0-PROD-01（Issue #4）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/4)
 
-`D-001`、`P0-PROD-01`、`P0-VAL-01`は完了済み。`P0-MKT-01`のAudience / occasion matrixもProduct Leadのレビューを経て完了した。次に`P0-MKT-02`の訴求仮説を作成する。
+`D-001`、`P0-PROD-01`、`P0-VAL-01`は完了済み。`P0-MKT-01`のAudience / occasion matrix、`P0-MKT-02`のMessage hypothesis matrixもProduct Leadのレビューを経て完了した。次に`P0-MKT-03`でMission、Product Positioning、広告表現の変更境界を定義する。
 
 ### 最優先：Phase 0
 
