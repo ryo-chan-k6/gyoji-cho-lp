@@ -20,18 +20,20 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 - LP / LINE: 広告訴求・事前関心の補助検証、初期コミュニティ形成に利用
 - 本需要検証: **iOS Validation ReleaseをApp Store公開し、実利用データでProduct Validationを行う**
 - Web簡易MVP: 本来の通知・継続体験を十分再現できないため、本需要検証には使用しない
-- Marketing: InstagramをPhase 0から並行運用し、ブランド・Organic獲得・コンテンツ仮説検証の資産を育てる
+- Marketing: Instagramは当面アプリと切り離し、**独立したメディア型アカウントとしてSNS単体の価値提供・オーディエンス形成・潜在興味/課題の学習に集中する**。アプリ名・開発中アプリには言及しない
 
 詳細:
 
 - [`docs/business-roadmap.md`](docs/business-roadmap.md) — 事業ロードマップ、プロダクト/マーケティング/収益化、データ方針
 - [`docs/monetization-scenarios.md`](docs/monetization-scenarios.md) — 収益モデル、悲観〜楽観シナリオ、Unit Economics、投資Gate
+- [`docs/instagram-strategy.md`](docs/instagram-strategy.md) — Instagramアカウントの確定運用方針、ターゲット、プロフィール、投稿カテゴリ、ビジュアル、KPI
 
 ## 構成
 
 ```text
 docs/business-roadmap.md          # 最新の事業ロードマップ（戦略の正本）
 docs/monetization-scenarios.md    # 収益化シナリオ・Unit Economics
+docs/instagram-strategy.md        # Instagram運用方針（SNS領域の正本）
 docs/handoff_memo.md              # 初期検討・LP作成時点の引継ぎメモ
 docs/cloudflare-pages-setup.md    # Cloudflare Pages 公開手順
 docs/line-ops-setup.md            # LINE / エルメ運用（補助検証・事前登録用）
@@ -43,7 +45,7 @@ public/                           # 公開ルート（Cloudflare Pages）
   js/line-cta.js
 ```
 
-> 事業方針・フェーズ判断については `business-roadmap.md` を最新の正本とします。`handoff_memo.md` やLINE関連文書にはLP需要検証フェーズ当時の記述が残る場合があります。
+> 事業全体の方針・フェーズ判断については `business-roadmap.md` を最新の正本とします。Instagram運用の具体方針については `instagram-strategy.md` を正本とし、他文書に旧SNS方針が残る場合は `instagram-strategy.md` を優先します。`handoff_memo.md` やLINE関連文書にはLP需要検証フェーズ当時の記述が残る場合があります。
 
 ## LP 公開URL
 
