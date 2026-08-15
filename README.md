@@ -35,29 +35,31 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 - [`docs/monetization-scenarios.md`](docs/monetization-scenarios.md) — 収益モデル、悲観〜楽観シナリオ、Unit Economics、投資Gate
 - [`docs/instagram-strategy.md`](docs/instagram-strategy.md) — Instagramアカウントの確定運用方針、ターゲット、プロフィール、投稿カテゴリ、ビジュアル、KPI
 - [`docs/content-production-guidelines.md`](docs/content-production-guidelines.md) — Instagram/iOS共通のAIコンテンツ制作、Fact Check、出典・著作権・素材管理ルール
+- [`docs/visual-character-guide.md`](docs/visual-character-guide.md) — 「こどもと季節」Visual Pattern 01、親子キャラクター、AI画像量産時の再現ルール
 
 ## 構成
 
 ```text
-docs/business-roadmap.md             # 最新の事業ロードマップ（戦略の正本）
-docs/business-strategy.md            # Phase 0〜2の検証戦略・MLP・Phase Gate詳細
-docs/phase-0-2-execution-plan.md     # Phase 0〜2.5のWorkstream別実行計画
-docs/ai-agent-operating-model.md     # AIエージェントを使った運営体制・実行プロセス
-docs/monetization-scenarios.md       # 収益化シナリオ・Unit Economics
-docs/instagram-strategy.md           # Instagram運用方針（SNS領域の正本）
+docs/business-roadmap.md              # 最新の事業ロードマップ（戦略の正本）
+docs/business-strategy.md             # Phase 0〜2の検証戦略・MLP・Phase Gate詳細
+docs/phase-0-2-execution-plan.md      # Phase 0〜2.5のWorkstream別実行計画
+docs/ai-agent-operating-model.md      # AIエージェントを使った運営体制・実行プロセス
+docs/monetization-scenarios.md        # 収益化シナリオ・Unit Economics
+docs/instagram-strategy.md            # Instagram運用方針（SNS領域の正本）
 docs/content-production-guidelines.md # Instagram/iOS共通のコンテンツ制作・出典管理
-docs/handoff_memo.md                 # 初期検討・LP作成時点の引継ぎメモ
-docs/cloudflare-pages-setup.md       # Cloudflare Pages 公開手順
-docs/line-ops-setup.md               # LINE / エルメ運用（補助検証・事前登録用）
-docs/line-cta-setup.md               # チャンネル別 CTA
-public/                              # 公開ルート（Cloudflare Pages）
+docs/visual-character-guide.md        # SNS用キャラクター・イラスト量産基準
+docs/handoff_memo.md                  # 初期検討・LP作成時点の引継ぎメモ
+docs/cloudflare-pages-setup.md        # Cloudflare Pages 公開手順
+docs/line-ops-setup.md                # LINE / エルメ運用（補助検証・事前登録用）
+docs/line-cta-setup.md                # チャンネル別 CTA
+public/                               # 公開ルート（Cloudflare Pages）
   index.html
   about.html / privacy.html / contact.html
-  js/line-cta-config.js              # チャンネル別 LINE URL
+  js/line-cta-config.js               # チャンネル別 LINE URL
   js/line-cta.js
 ```
 
-> 事業全体の方針・フェーズ判断については `business-roadmap.md` を最新の正本とします。Instagram運用の具体方針については `instagram-strategy.md` を正本とし、コンテンツ制作・情報収集・出典管理については `content-production-guidelines.md` を共通ルールとします。他文書に旧SNS方針が残る場合はこれらを優先します。`handoff_memo.md` やLINE関連文書にはLP需要検証フェーズ当時の記述が残る場合があります。
+> 事業全体の方針・フェーズ判断については `business-roadmap.md` を最新の正本とします。Instagram運用の具体方針については `instagram-strategy.md` を正本とし、コンテンツ制作・情報収集・出典管理については `content-production-guidelines.md`、SNS用キャラクターとイラストの量産基準については `visual-character-guide.md` を共通ルールとします。他文書に旧SNS方針が残る場合はこれらを優先します。`handoff_memo.md` やLINE関連文書にはLP需要検証フェーズ当時の記述が残る場合があります。
 
 ## LP 公開URL
 
