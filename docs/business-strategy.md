@@ -230,7 +230,7 @@ MLPは「最低限動くもの」ではなく、機能数を絞りながら、�
 - 追加開発費：0円。外注、有料SDK、有料バックエンド、新規有料開発ツールを使わない
 - Apple Developer Program等の必須費用は`D-012`、広告費は`D-010`／`D-014`で別途判断する
 
-`P0-PROD-04`ではこの上限と`D-004`／`D-017`のMust、`D-005`のWon'tを同時にFrozen Scopeへ固定する。週次・4週目・8週間または224時間の早い方で残作業と品質Gateを再予測し、10週間または280時間の早い方を自動延長しない。工数都合でMust、計測、Legal / Privacy / App Store Gateを無承認で削らない。
+`P0-PROD-04`で、この上限と`D-004`／`D-017`のMust、`D-005`のWon'tを[`MLP Frozen Scope`](workstreams/product/mlp-frozen-scope.md)へ固定した。週次・4週目・8週間または224時間の早い方で残作業と品質Gateを再予測し、10週間または280時間の早い方を自動延長しない。工数都合でMust、計測、Legal / Privacy / App Store Gateを無承認で削らない。
 
 ### Local-first原則
 

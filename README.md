@@ -33,6 +33,7 @@ GYOJI-CHOは、乳幼児・子どもの家族固有行事を入口に、家族�
 - [`docs/phase-0-2-execution-plan.md`](docs/phase-0-2-execution-plan.md) — 5 Workstreamのタスク、成果物、依存関係、完了条件
 - [`docs/ai-agent-operating-model.md`](docs/ai-agent-operating-model.md) — AI PM、Workstream Lead、レビュー、承認境界
 - [`docs/project-operating-policy.md`](docs/project-operating-policy.md) — リポジトリ、ブランチ、PR、タスク、正本、品質Gate、権限の運用方針
+- [`docs/workstreams/product/mlp-frozen-scope.md`](docs/workstreams/product/mlp-frozen-scope.md) — Validation ReleaseのMust / May / Won't、開発上限、変更管理
 - [`docs/operations/README.md`](docs/operations/README.md) — Task Brief、D-ID、Gate、リスク、移行済みタスクボードの入口
 - [`docs/monetization-scenarios.md`](docs/monetization-scenarios.md) — 収益モデル、悲観〜楽観シナリオ、Unit Economics、投資Gate
 - [`docs/instagram-strategy.md`](docs/instagram-strategy.md) — Instagramアカウントの確定運用方針、ターゲット、プロフィール、投稿カテゴリ、ビジュアル、KPI
