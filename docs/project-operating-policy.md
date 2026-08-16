@@ -229,15 +229,18 @@ Backlog → Ready → In Progress → Review → Done
 
 Phase 0の期限・責任者稼働・費用上限は2026年8月16日に確定した。
 
-外注は全Phaseを通じて行わない。変更が必要になった場合は、支出や契約の前に `D-020` を改定する。
+外注は全Phaseを通じて行わない。Phase 0は`D-020`、Phase 1は`D-021`を適用し、変更が必要になった場合は支出や契約の前に該当PhaseのD-IDを改定する。
 
 | ID | 決定内容 | 運用条件 | 決定記録 |
 |---|---|---|---|
 | `D-018` | 2026年8月17日〜9月6日の3週間。主要成果物は8月30日目標 | 前倒し完了可。3週目は横断レビュー・Rework・Gateを中心に使う | [`d-018-phase-0-timebox.md`](operations/decisions/d-018-phase-0-timebox.md) |
 | `D-019` | 責任者は週28時間、通常判断SLAは1営業日 | 最低4時間を判断・レビューへ確保。判断待ち3件超では新規着手を抑制 | [`d-019-owner-capacity.md`](operations/decisions/d-019-owner-capacity.md) |
 | `D-020` | Phase 0の追加支出0円、外注なし | 既存AIサービス内で実行。新規有料利用はD-ID改定まで行わない | [`d-020-phase-0-cost-cap.md`](operations/decisions/d-020-phase-0-cost-cap.md) |
+| `D-021` | Phase 1は目標8週／224時間、上限10週／280時間、追加開発費0円 | 週28時間。外注・有料SDK・有料バックエンドなし。超過前に停止し、スコープ削減またはHuman再判断 | [`d-021-phase-1-development-cap.md`](operations/decisions/d-021-phase-1-development-cap.md) |
 
-広告費は `D-010` で扱い、現時点の想定は約5,000円とする。Phase 2獲得費は `D-014`、投資上限と最終権限は `D-016`、Apple関連費用は `D-012` とPhase 1予算で扱う。
+広告費は `D-010` で扱い、現時点の想定は約5,000円とする。Phase 2獲得費は `D-014`、投資上限と最終権限は `D-016`、Apple関連費用は `D-012` で扱う。Apple関連費用は`D-021`の追加開発費0円には含めないが、`D-012`確定前に支出しない。
+
+Phase 1では週次と4週目に、経過週、累計責任者時間、残作業、未通過Gate、外部待ち、残見積り、完了予測週、EAC時間を記録する。10週または280時間の早い方を超える見込みでは新規実装を止め、Human Ownerへエスカレーションする。工数都合でMustや品質・計測・Legal Gateを削って完了扱いにしない。
 
 ## 10. リリース・緊急対応
 
