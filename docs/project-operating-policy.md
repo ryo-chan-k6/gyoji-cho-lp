@@ -201,7 +201,7 @@ Backlog → Ready → In Progress → Review → Done
 | Marketing | 実提供価値との一致、誤認防止、対象、比較条件、UTM、停止条件、公開承認 |
 | Data | 指標定義、分母、期間、除外、発火条件、禁止データ、再現手順、欠測 |
 | Legal / Privacy | 実際のデータフローとの一致、主体、目的、保持・削除、表示場所、専門家確認要否 |
-| 行事コンテンツ | 出典、確認日、一般的目安と地域差、表現、権利、訂正方法 |
+| 行事コンテンツ | `D-013`に基づくFact Sheet / Content Master / Source Ledger、主要事実2情報源以上（Priority Aを1つ以上）、確認日、一般的目安と地域差、表現、権利、訂正方法、Legal Lead確認、Human Owner全件承認 |
 | コード | build / test / lint、主要導線の手動確認、秘密情報なし、データ送信確認、戻し方 |
 | Phase Gate | 対象タスク、証拠、基準比較、反証、例外、残存リスク、責任者判断 |
 

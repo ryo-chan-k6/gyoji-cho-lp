@@ -391,7 +391,7 @@ P25 利用者・離脱者インタビュー → 定量＋定性統合
 | D-010 | Phase 0.5設計 | チャネル、少額予算、3訴求、LP比較方法、終了条件 | P0-MKT-04完了前 | Phase 0.5全般 |
 | D-011 | MLP配布方法 | 公開App Store、段階公開、TestFlightからの移行 | P1-MKT-02着手前 | P1-PROD-06、P1-MKT-02 |
 | D-012 | Apple契約主体 | 個人／法人、Developer Program、表示名、問い合わせ先 | P0-LEGAL-02完了前 | P0-LEGAL-02、P1-PROD-06 |
-| D-013 | コンテンツ品質 | 出典、監修、地域差、レビュー頻度、責任者 | P0-PROD-02完了前 | P0-PROD-02、P0-LEGAL-04、P1-PROD-03 |
+| D-013 | コンテンツ品質 | 主要事実2情報源以上、Priority Aを1つ以上、AI作成→Legal確認→Human全件承認、年1回＋トリガー再レビュー | **2026-08-16確定** | P0-PROD-02、P0-LEGAL-04、P1-PROD-03 |
 | D-014 | Phase 2獲得計画 | 広告チャネル、予算、セグメント、App Store Product Page比較 | P0-VAL-03完了前 | P0-VAL-03、P1-MKT-03、Phase 2 Marketing |
 | D-015 | 定性調査 | 対象群、人数、連絡方法、録音、謝礼 | P0-VAL-05完了前 | P0-VAL-05、Phase 2.5 |
 | D-016 | 最終判定権限 | Go / Pivot / Stopの判断者、例外承認、投資上限 | P0-VAL-04完了前 | P25-VAL-04、P25-GATE-01 |

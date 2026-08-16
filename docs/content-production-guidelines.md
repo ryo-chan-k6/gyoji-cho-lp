@@ -1,6 +1,6 @@
 # コンテンツ制作・出典管理ガイドライン
 
-最終更新: 2026-08-15
+最終更新: 2026-08-16
 
 ## 1. 本ドキュメントの目的
 
@@ -15,6 +15,19 @@ Instagramと将来のiOSアプリで利用する、日本の行事・風習・�
 - ユーザーからの信頼
 
 法令・Meta・Apple等のプラットフォームルールは変更され得るため、公開・リリース時点の最新公式ルールを再確認する。
+
+### D-013で確定したMLP品質Gate
+
+MLPの行事・季節文化コンテンツは、[`D-013`](operations/decisions/d-013-content-quality.md)に従う。
+
+- 全件にFact Sheet、Content Master、Source Ledgerを持つ
+- 主要事実は原則2情報源以上で確認し、1つ以上をPriority Aとする
+- 唯一の当事者公式情報を単独利用する場合は、理由と対象主張を記録する
+- AI Content Leadが作成し、Legal Leadが出典・権利・安全・表現を確認する
+- Human Ownerが公開前・App Store提出前・Phase 2 freeze前の完成版を全件最終承認する
+- MLPでは有償の外部監修を行わず、一般化できない高リスク内容を対象外にする
+- 全件をPhase 1公開前、Phase 2 freeze前、以後年1回および訂正・出典変更等の発生時に再確認する
+- iOSではユーザーが参考情報・出典へ到達できる導線を設ける
 
 ---
 
@@ -155,9 +168,23 @@ Priority C以下の情報を使う場合は、可能な限りPriority A / Bで�
 | multiple_theories | 諸説の有無 |
 | practical_note | 現代家庭で実践する際の補足 |
 | safety_note | 食事・乳幼児・火気等の安全上の注意が必要か |
+| risk_level | Low / Medium / High。Highは原則MLP対象外 |
+| exclusion_reason | 対象外にした場合の理由 |
 | sources | 根拠資料一覧 |
 | checked_at | 最終確認日 |
-| reviewer | 人レビュー担当 |
+| ai_content_lead | 調査・Fact Sheet・原稿案の作成担当 |
+| content_completed_at | AI Content Leadの作成完了日 |
+| legal_reviewer | 出典・権利・安全・表現の確認担当 |
+| legal_reviewed_at | Legal Leadの確認日 |
+| human_approver | 完成版の公開承認者 |
+| human_approved_at | Human Ownerの承認日 |
+| review_status | Draft / Content Checked / Legal Checked / Human Approved / Published / Excluded |
+| last_reviewed_at | 最終再レビュー日 |
+| next_review_due | 次回年次レビュー期限 |
+| review_trigger | 出典変更、訂正報告、算出変更等の随時再レビュー理由 |
+| correction_status | None / Investigating / Correction Required / Corrected |
+
+`review_status`が`Human Approved`または`Published`でないコンテンツは公開しない。`Excluded`は対象外理由を記録し、公開データへ含めない。AI Content Lead、Legal Lead、Human Ownerの担当・日付・状態は別々に記録し、単一の`reviewer`項目で代用しない。
 
 ### 表現ルール
 
@@ -186,13 +213,18 @@ Source Ledgerの推奨項目:
 | publisher | 発行主体 |
 | source_url | URL |
 | source_type | Government / Academic / Official / Media等 |
+| source_priority | Priority A / B / C / Unsupported |
 | accessed_at | 確認日 |
 | reliability | High / Medium / Low |
 | supported_claims | どの主張の根拠か |
+| target_claim | 単独利用例外を適用する具体的な主張。通常は空欄 |
+| exception_reason | 唯一の当事者公式情報等を単独利用する理由。通常は空欄 |
 | copyright_note | 引用・転載・画像等の権利注意 |
 | notes | 地域差・諸説等 |
 
 AI自身を`source_name`として登録しない。
+
+主要事実ごとに原則2つ以上の`source_id`を対応させ、そのうち1つ以上を`source_priority: Priority A`とする。単独利用例外では、`target_claim`と`exception_reason`の両方がない記録を有効としない。
 
 ---
 
@@ -393,6 +425,8 @@ key_facts:
 regional_variation: "..."
 multiple_theories: "..."
 safety_note: "..."
+risk_level: low
+exclusion_reason: null
 sources:
   - source_id: SRC-001
 instagram:
@@ -409,9 +443,17 @@ ios:
   source_display:
     - "..."
 review:
-  fact_checked: true
-  human_reviewed: true
-  reviewed_at: 2026-08-15
+  status: human_approved
+  ai_content_lead: AI Content Lead
+  content_completed_at: 2026-08-16
+  legal_reviewer: Legal Lead
+  legal_reviewed_at: 2026-08-16
+  human_approver: Human Owner
+  human_approved_at: 2026-08-16
+  last_reviewed_at: 2026-08-16
+  next_review_due: 2027-08-16
+  review_trigger: null
+  correction_status: none
 ```
 
 データ形式自体は実装段階で変更可能だが、**Fact / Source / Instagram表現 / iOS表現を分離して持つ**ことを原則とする。
@@ -424,15 +466,23 @@ review:
 
 - [ ] AI回答だけを根拠にしていない
 - [ ] Source Ledgerに根拠を記録した
-- [ ] 主要な事実を一次・信頼性の高い情報源で確認した
+- [ ] 主要事実ごとに原則2情報源以上があり、そのうち1つ以上がPriority Aである
+- [ ] 単独利用例外がある場合、対象主張と例外理由を記録した
 - [ ] 地域差・諸説の有無を確認した
 - [ ] 必要な「一般的には」「諸説あります」等を入れた
 - [ ] 他者の文章を不必要にコピーしていない
 - [ ] 写真・イラスト・BGM等の利用権限を確認した
 - [ ] AI生成メディアについて最新のMeta等の表示ルールを確認した
 - [ ] 乳幼児の安全に関わる内容がある場合は安全性を確認した
+- [ ] 高リスク内容を除外し、対象外理由を記録した
 - [ ] 「やらなければならない」という過度な義務感を生む表現になっていない
-- [ ] 人が完成版をレビューした
+- [ ] AI Content Leadの担当・作成完了日を記録した
+- [ ] Legal Leadの担当・確認日・確認状態を記録した
+- [ ] Human Ownerの全件承認者・承認日を記録した
+- [ ] `review_status`が`Human Approved`または`Published`である
+- [ ] `last_reviewed_at`と`next_review_due`を記録した
+- [ ] 訂正・出典変更・算出変更等のtriggerと`correction_status`を確認した
+- [ ] Phase 1公開前／Phase 2 freeze前／年次／随時の該当再レビューを完了した
 
 ---
 
