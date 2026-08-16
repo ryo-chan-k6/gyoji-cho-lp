@@ -254,7 +254,9 @@ GitHub上の運用基盤は有効化済み。
 - `main` 保護：[main protection Ruleset](https://github.com/ryo-chan-k6/gyoji-cho-lp/rules/20890713)
 - 初期Issue：[D-001（Issue #3）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/3)、[P0-PROD-01（Issue #4）](https://github.com/ryo-chan-k6/gyoji-cho-lp/issues/4)
 
-`D-001`、`P0-PROD-01`、`P0-VAL-01`は完了済み。Marketingの`P0-MKT-01/02/03/05`もProduct Leadのレビューを経て完了し、Audience / occasion、訴求仮説、Brand / positioning変更境界、Phase 2獲得仮説・ASO準備項目が揃った。次は`D-002`（家族固有行事）、`D-003`（季節文化）、`D-013`（コンテンツ品質）をHuman Ownerが判断した後、`P0-PROD-02`へ進む。
+`D-001`、`P0-PROD-01`、`P0-VAL-01`は完了済み。Marketingの`P0-MKT-01/02/03/05`もProduct Leadのレビューを経て完了し、Audience / occasion、訴求仮説、Brand / positioning変更境界、Phase 2獲得仮説・ASO準備項目が揃った。
+
+`D-002`は2026年8月16日に確定。MLP対象は、お七夜、お宮参り、お食い初め／百日祝い、ハーフバースデー、初節句、1歳祝いの6テーマと、生後1〜11か月の軽量な月齢マイルストーンとする。次は`D-003`（季節文化）と`D-013`（コンテンツ品質）を反映した後、`P0-PROD-02`へ進む。
 
 ### 最優先：Phase 0
 
