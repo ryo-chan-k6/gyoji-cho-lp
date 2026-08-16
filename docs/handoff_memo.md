@@ -262,6 +262,8 @@ GitHub上の運用基盤は有効化済み。
 
 `D-013`も2026年8月16日に確定。主要事実は原則2情報源以上（Priority Aを1つ以上）で確認し、AI Content Lead作成→Legal Lead確認→Human Owner全件承認とする。外部有償監修はMLPで行わず、高リスク内容は対象外とする。これにより`P0-PROD-02`の判断依存は解除された。
 
+`P0-PROD-02`もValidation Lead・Legal Leadの独立レビューを経て完了。家族固有行事6テーマ、月齢1〜11、月別季節文化12件について、価値、時期・算出候補、準備、通知候補、地域差、安全、Source plan、採否、検証分母、Legal引継ぎを`event-scope-matrix.md`へ固定した。次は`P0-PROD-03`でMLP experience map / wireflowを作成する。
+
 ### 最優先：Phase 0
 
 1. 対象ユーザーと最初に解く課題を固定
