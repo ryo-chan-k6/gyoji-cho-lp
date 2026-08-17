@@ -2,6 +2,8 @@
 
 ## Start here
 
+The primary execution environment is Cursor. Codex remains a compatibility fallback.
+
 Before changing the repository, read:
 
 1. `README.md`
@@ -11,6 +13,8 @@ Before changing the repository, read:
 5. The assigned Task Brief and applicable D-ID records
 
 Use the closest applicable `AGENTS.md` if a subdirectory adds one later.
+
+Cursor-specific role prompts live in `.cursor/agents/`. Project rules live in `.cursor/rules/`. The task-execution skill is `.cursor/skills/execute-gyoji-cho-task/`. `.codex/agents/` is a compatibility copy and is not the source of truth.
 
 ## Product guardrails
 
@@ -25,12 +29,13 @@ Use the closest applicable `AGENTS.md` if a subdirectory adds one later.
 
 - Work from one Task ID or one `OPS-###` issue at a time.
 - A task is Ready only when dependencies, required D-IDs, Task Brief, owner, reviewer, output path, and completion criteria are present.
-- Branches created by Codex use `codex/<task-id>-<short-slug>`.
+- Branches created by Cursor use `cursor/<task-id>-<short-slug>`. Existing `codex/<task-id>-<short-slug>` branches are legacy compatibility only.
 - Do not push, create a PR, publish, send messages, spend money, accept contracts, or change external services without explicit user approval.
 - Do not push directly to `main`. Use a PR and squash merge; the human owner performs the final merge.
 - Keep project-wide In Progress at 3 or fewer and each Workstream at 1 unless the operating policy is changed.
 - Do not let two agents edit the same file or mutable dataset concurrently.
 - A creator must not provide the final independent review of a high-impact artifact or Phase Gate.
+- Delegate independent Workstream work to the matching `.cursor/agents/` subagent. Use `gate-reviewer` for Phase Gates.
 
 ## Files and documentation
 

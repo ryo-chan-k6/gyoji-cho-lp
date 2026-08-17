@@ -1,6 +1,6 @@
 # GYOJI-CHO AIエージェント運営モデル
 
-最終更新：2026年8月15日
+最終更新：2026年8月17日
 対象計画：[`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md)
 運用方針：[`project-operating-policy.md`](project-operating-policy.md)
 
@@ -110,7 +110,7 @@ Backlog → Ready → In Progress → Review → Done
 5. Leadが成果物と根拠をReviewへ提出する
 6. 作成者とは別のReviewerが完了条件に照らしてPass / Reworkを返す
 7. AI PMが横断整合性を確認し、通常タスクをDoneにする
-8. 判断が必要ならDecision Packを責任者へ提示し、原則として本Chat内の判断セッションで決定する
+8. 判断が必要ならDecision Packを責任者へ提示し、原則として責任者との対話で決定する
 9. Gate到達時はGate Reviewerが反証を含めてレビューし、責任者が最終判断する
 
 ## 6. Task Brief
@@ -182,7 +182,7 @@ Legal Leadの成果は法的助言や専門家の最終確認を代替しない�
 
 ## 10. 判断とエスカレーション
 
-[`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md) のD-IDは、原則として本Chat内で責任者が決める。AI PMは論点が混ざらないよう判断テーマを区切り、判断を求める際に次のDecision Packを作成する。
+[`phase-0-2-execution-plan.md`](phase-0-2-execution-plan.md) のD-IDは、原則として責任者との対話（主にCursor）で決める。会話履歴は正本にしない。AI PMは論点が混ざらないよう判断テーマを区切り、判断を求める際に次のDecision Packを作成する。
 
 決定後は [`operations/decisions/TEMPLATE.md`](operations/decisions/TEMPLATE.md) を使ってリポジトリへ記録し、影響する正本文書、Task Brief、Issueを同じ変更単位で更新する。
 
@@ -267,22 +267,38 @@ AI PM、Workstream Lead、Gate Reviewerのいずれも、責任者に代わっ�
 - 責任者がGo / Pivot / Stopまたは次Phase開始可否を決定
 - 判断記録と影響タスクを更新
 
-## 14. 初期導入順
+## 14. Cursor上の役割定義
 
-1. `AGENTS.md` と `.codex/agents/` でAI PM、5 Workstream Lead、Gate Reviewerの役割と承認境界を適用する
+主実行環境はCursorとする。親エージェントはAI PMとして動き、独立したWorkstream作業とGateレビューだけをサブエージェントへ委譲する。WIP上限を超える並列起動はしない。
+
+| ロール | Cursor定義 | 備考 |
+|---|---|---|
+| AI PM | `.cursor/agents/business-orchestrator.md` | Task Brief、Ready、WIP、横断整合 |
+| Product Lead | `.cursor/agents/product-lead.md` | Product Task Briefの実行 |
+| Marketing Lead | `.cursor/agents/marketing-lead.md` | Marketing Task Briefの実行 |
+| Data Lead | `.cursor/agents/data-lead.md` | Data Task Briefの実行 |
+| Legal Lead | `.cursor/agents/legal-lead.md` | Legal Task Briefの実行。法律専門家の代替ではない |
+| Validation Lead | `.cursor/agents/validation-lead.md` | Validation Task Briefの実行 |
+| Gate Reviewer | `.cursor/agents/gate-reviewer.md` | `readonly: true`。作成と検証を分離する |
+
+共通ガードレールは `AGENTS.md`、常時適用の実行ルールは `.cursor/rules/`、タスク着手手順は `.cursor/skills/execute-gyoji-cho-task/` に置く。`.codex/agents/` はCodex互換の補助定義であり、役割変更時は `.cursor/agents/` を正本として同期する。
+
+## 15. 初期導入順
+
+1. `AGENTS.md`、`.cursor/rules/`、`.cursor/agents/` でAI PM、5 Workstream Lead、Gate Reviewerの役割と承認境界を適用する
 2. Issue / PR / Task Brief / Decision / Gateテンプレートを使う
 3. `D-018〜020` の確定値（9月6日期限、週28時間、追加支出0円）を週次運営へ適用する
 4. GitHub Issues / Projectと `main` Rulesetを責任者承認後に有効化する
 5. `D-001`確定後、`P0-PROD-01`からWIP制限付きで実行する
 6. 最初の3〜5タスクで、分担粒度、レビュー工数、手戻りを確認する
-7. Specialistの固定化はせず、必要性が繰り返し確認された役割だけ再利用可能なエージェント定義へ昇格する
+7. Specialistの固定化はせず、必要性が繰り返し確認された役割だけ `.cursor/agents/` の再利用可能な定義へ昇格する
 
-プロジェクト固有エージェント定義ではモデルを固定しない。利用環境の既定値を継承し、タスクの費用・速度・品質要求に応じた変更が必要な場合だけ責任者と見直す。
+プロジェクト固有エージェント定義ではモデルを固定しない。`model: inherit` を既定とし、タスクの費用・速度・品質要求に応じた変更が必要な場合だけ責任者と見直す。
 
-## 15. 公式参考資料
+## 16. 公式参考資料
 
-- [OpenAI: Subagents](https://developers.openai.com/codex/agent-configuration/subagents)
-- [OpenAI: AGENTS.md](https://developers.openai.com/codex/agent-configuration/agents-md)
-- [OpenAI: Security](https://developers.openai.com/codex/agent-approvals-security)
+- [Cursor: Rules](https://cursor.com/docs/rules.md)
+- [Cursor: Subagents](https://cursor.com/docs/subagents.md)
+- [Cursor: Skills](https://cursor.com/docs/skills.md)
 
 公式ガイドでは、独立した境界の明確な作業はサブエージェントへ分担しやすい一方、同じ可変状態への並行書き込みは競合と調整負荷を生みやすいとされている。本運営モデルでは、その考え方をWorkstream、WIP制限、単一編集担当、独立レビューへ反映している。

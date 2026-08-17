@@ -1,0 +1,15 @@
+---
+description: Japanese documentation, canonical sources, and D-ID change control for GYOJI-CHO docs
+globs: docs/**/*.md
+alwaysApply: false
+---
+
+# Project documentation
+
+- Write project documents in Japanese. Keep code identifiers and external product names in canonical form.
+- Use `YYYY-MM-DD` for machine-oriented dates and `YYYY年M月D日` for reader-facing metadata.
+- Record sources, retrieval dates, assumptions, uncertainty, and regional variation when claims affect content or decisions.
+- Do not treat chat history, an Issue body, or an unapproved draft as a canonical decision.
+- Update all affected canonical documents in the same change when terminology, phases, scope, metrics, or data handling change.
+- Do not change Mission, target user, Frozen Scope, KPI/Gate thresholds, data policy, budget, or Go/Pivot/Stop without a decided D-ID.
+- Put Phase artifacts under `docs/workstreams/<workstream>/` and operational records under `docs/operations/`.
