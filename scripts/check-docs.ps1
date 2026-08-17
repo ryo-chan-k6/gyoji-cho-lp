@@ -17,6 +17,16 @@ $requiredPaths = @(
     ".github/ISSUE_TEMPLATE/decision.yml",
     ".github/ISSUE_TEMPLATE/bug.yml",
     ".github/workflows/docs-quality.yml",
+    ".cursor/agents/business-orchestrator.md",
+    ".cursor/agents/product-lead.md",
+    ".cursor/agents/marketing-lead.md",
+    ".cursor/agents/data-lead.md",
+    ".cursor/agents/legal-lead.md",
+    ".cursor/agents/validation-lead.md",
+    ".cursor/agents/gate-reviewer.md",
+    ".cursor/rules/cursor-primary.mdc",
+    ".cursor/skills/execute-gyoji-cho-task/SKILL.md",
+    ".codex/README.md",
     ".codex/agents/business-orchestrator.toml",
     ".codex/agents/product-lead.toml",
     ".codex/agents/marketing-lead.toml",
@@ -33,8 +43,46 @@ foreach ($relativePath in $requiredPaths) {
     }
 }
 
-$markdownFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File -Filter "*.md" |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' }
+$cursorAgentNames = @(
+    "business-orchestrator.md",
+    "product-lead.md",
+    "marketing-lead.md",
+    "data-lead.md",
+    "legal-lead.md",
+    "validation-lead.md",
+    "gate-reviewer.md"
+)
+$cursorAgentsDir = Join-Path $repoRoot ".cursor/agents"
+foreach ($agentName in $cursorAgentNames) {
+    $agentPath = Join-Path $cursorAgentsDir $agentName
+    if (-not (Test-Path -LiteralPath $agentPath)) {
+        continue
+    }
+    $agentText = Get-Content -LiteralPath $agentPath -Raw
+    if ($agentText -notmatch '(?s)^---\r?\n.*?\bname\s*:') {
+        $errors.Add("Cursor agent missing frontmatter name: .cursor/agents/$agentName")
+    }
+    if ($agentText -notmatch '(?s)^---\r?\n.*?\bdescription\s*:') {
+        $errors.Add("Cursor agent missing frontmatter description: .cursor/agents/$agentName")
+    }
+    if ($agentName -eq "gate-reviewer.md" -and $agentText -notmatch '(?m)^readonly:\s*true\s*$') {
+        $errors.Add("Cursor agent must set readonly: true: .cursor/agents/gate-reviewer.md")
+    }
+}
+
+$primaryRulePath = Join-Path $repoRoot ".cursor/rules/cursor-primary.mdc"
+if (Test-Path -LiteralPath $primaryRulePath) {
+    $primaryRuleText = Get-Content -LiteralPath $primaryRulePath -Raw
+    if ($primaryRuleText -notmatch '(?m)^alwaysApply:\s*true\s*$') {
+        $errors.Add("Required Cursor rule must set alwaysApply: true: .cursor/rules/cursor-primary.mdc")
+    }
+}
+
+$markdownFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File |
+    Where-Object {
+        $_.FullName -notmatch '[\\/]\.git[\\/]' -and
+        ($_.Extension -in '.md', '.mdc')
+    }
 
 $linkPattern = [regex]'!?\[[^\]]*\]\((?<target>[^)]+)\)'
 

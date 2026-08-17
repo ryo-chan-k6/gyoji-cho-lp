@@ -1,0 +1,13 @@
+---
+description: Preserve the Cloudflare Pages publish root and LP public assets
+globs: public/**
+alwaysApply: false
+---
+
+# Public LP root
+
+- Keep `public/` as the Cloudflare Pages publish root unless a decided change explicitly moves it.
+- Do not add a Web MVP. Product Validation uses an iOS MLP released through the App Store.
+- Distinguish current LP copy, Validation Release, and future vision. Do not present unimplemented features as current.
+- Do not commit secrets, tracking properties, or real user personal data.
+- LINE CTA and channel URLs live in `public/js/line-cta-config.js`. Treat LINE as auxiliary, not the Product Validation Gate.

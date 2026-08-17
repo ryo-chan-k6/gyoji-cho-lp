@@ -62,7 +62,10 @@ public/                               # 公開ルート（Cloudflare Pages）
   about.html / privacy.html / contact.html
   js/line-cta-config.js               # チャンネル別 LINE URL
   js/line-cta.js
-.codex/agents/                       # AI PM・5 Workstream Lead・Gate Reviewerの定義
+.cursor/agents/                      # Cursor用AIロール（役割定義の正本）
+.cursor/rules/                       # Cursor Project Rules
+.cursor/skills/                      # Cursor Skills
+.codex/agents/                       # Codex互換の補助定義
 .github/                             # Issue・PR・CODEOWNERS・品質チェック
 scripts/check-docs.ps1               # 文書リンク・必須ファイル・競合マーカー確認
 AGENTS.md                             # リポジトリ内で働くAIへの共通指示
@@ -72,6 +75,7 @@ AGENTS.md                             # リポジトリ内で働くAIへの共�
 
 ## プロジェクト運用
 
+- 主実行環境はCursor。役割定義は `.cursor/agents/`、共通指示は `AGENTS.md`
 - Phase 2.5までは単一リポジトリで運用し、将来のiOS MLPは `apps/ios/` に追加する
 - `main` への直接pushは行わず、1 Task IDごとの短命ブランチとPRを使う
 - Phase計画は `phase-0-2-execution-plan.md`、日々の状態はGitHub Issues / Project、個別指示はTask Briefで管理する

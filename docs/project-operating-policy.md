@@ -1,6 +1,6 @@
 # GYOJI-CHO プロジェクト運用方針
 
-最終更新：2026年8月16日
+最終更新：2026年8月17日
 適用範囲：Phase 0〜2.5の計画、調査、制作、開発、検証
 
 ## 1. 目的
@@ -56,10 +56,16 @@ LP、事業文書、運用設定、将来のiOS MLPを同じリポジトリで�
 │  ├─ project-operating-policy.md# プロジェクト運用の正本
 │  ├─ operations/                # Task Brief、判断、Gate、リスク、運用台帳
 │  └─ workstreams/               # Phase成果物（必要になった時点で追加）
-├─ .codex/agents/                # プロジェクト固有AIロール
+├─ .cursor/
+│  ├─ agents/                    # Cursor用AIロール（役割定義の正本）
+│  ├─ rules/                     # Cursor Project Rules
+│  └─ skills/                    # Cursor Skills
+├─ .codex/agents/                # Codex互換の補助定義。正本ではない
 ├─ .github/                      # Issue、PR、CI、CODEOWNERS
 └─ scripts/                      # ローカルとCIで共用する検証
 ```
+
+主実行環境はCursorとする。役割・権限の正本は `.cursor/agents/` に置き、`.codex/agents/` はCodexを補助利用する場合の互換コピーとする。役割を変更するときは `.cursor/agents/` を先に更新し、同じ内容をCodex側へ反映する。
 
 既存の `public/` はCloudflare Pagesの公開ルートであり、LP再構築の判断なしに移動しない。新しいPhase成果物は、原則として `docs/workstreams/{product|marketing|data|legal|validation}/` に置く。横断運用記録は `docs/operations/` に置く。
 
@@ -69,14 +75,17 @@ LP、事業文書、運用設定、将来のiOS MLPを同じリポジトリで�
 
 `main` を常にレビュー済みの状態に保つ、短命ブランチ中心のtrunk-based運用とする。
 
-- AIエージェント：`codex/<task-id>-<short-slug>`
+- Cursor（主実行環境）：`cursor/<task-id>-<short-slug>`
+- Codex（互換・補助）：`codex/<task-id>-<short-slug>`
 - 人間の機能追加：`feat/<task-id>-<short-slug>`
 - 修正：`fix/<task-id>-<short-slug>`
 - 文書：`docs/<task-id>-<short-slug>`
 - 運用：`chore/<task-id>-<short-slug>`
 - 緊急修正：`hotfix/<issue-id>-<short-slug>`
 
-例：`codex/p0-prod-01-validation-brief`
+例：`cursor/p0-prod-01-validation-brief`
+
+新規のAI作業は `cursor/` を使う。既存の `codex/` ブランチは互換として残してよいが、新規作成の既定にはしない。
 
 1ブランチは1つのTask IDまたは1つの明確な運用Issueに対応させる。無関係な変更を混ぜない。開始前とPR直前に `main` との差分と競合を確認する。
 
@@ -261,7 +270,8 @@ Phase 1では週次と4週目に、経過週、累計責任者時間、残作業
 
 ## 12. 公式参考資料
 
-- [OpenAI Codex: AGENTS.md](https://developers.openai.com/codex/agent-configuration/agents-md)
-- [OpenAI Codex: Subagents](https://developers.openai.com/codex/agent-configuration/subagents)
-- [OpenAI Codex: Security](https://developers.openai.com/codex/agent-approvals-security)
+- [Cursor: Rules](https://cursor.com/docs/rules.md)
+- [Cursor: Subagents](https://cursor.com/docs/subagents.md)
+- [Cursor: Skills](https://cursor.com/docs/skills.md)
 - [GitHub Docs: Available rules for rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets)
+- Codex互換が必要な場合のみ [OpenAI Codex: AGENTS.md](https://developers.openai.com/codex/agent-configuration/agents-md) と [Subagents](https://developers.openai.com/codex/agent-configuration/subagents) を参照する

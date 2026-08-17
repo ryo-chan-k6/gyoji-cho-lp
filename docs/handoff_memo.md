@@ -226,7 +226,7 @@ CPAが高いだけでプロダクトをKillせず、CTRが高いだけでGoに�
 | `docs/ai-agent-operating-model.md` | AIエージェント運営体制・実行プロセス | 役割、WIP、レビュー、承認境界の正本 |
 | `docs/project-operating-policy.md` | プロジェクト運用 | リポジトリ、ブランチ、Issue、PR、正本、品質、外部承認の正本 |
 | `docs/operations/` | 実行記録とテンプレート | Task Brief、D-ID、Gate、リスク、移行済みタスクボード |
-| `AGENTS.md` / `.codex/agents/` | AI実行設定 | 共通ガードレールとAI PM・Lead・Gate Reviewerの定義 |
+| `AGENTS.md` / `.cursor/agents/` | AI実行設定 | Cursor主軸の共通ガードレールとAI PM・Lead・Gate Reviewer定義 |
 | `.github/` | GitHub運用設定 | Issue / PRテンプレート、CODEOWNERS、文書品質チェック |
 | `docs/monetization-scenarios.md` | 収益化シナリオ | Unit Economics・投資Gate |
 | `docs/instagram-strategy.md` | Instagram運用方針 | SNS領域の正本 |

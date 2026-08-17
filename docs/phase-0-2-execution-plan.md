@@ -1,6 +1,6 @@
 # GYOJI-CHO Phase 0〜2 実行計画
 
-最終更新：2026年8月15日
+最終更新：2026年8月17日
 上位ロードマップ：[`business-roadmap.md`](business-roadmap.md)
 対象戦略：[`business-strategy.md`](business-strategy.md)
 運営モデル：[`ai-agent-operating-model.md`](ai-agent-operating-model.md)
@@ -54,6 +54,7 @@
 
 ### AIエージェント運営
 
+- 主実行環境はCursor。役割定義は `.cursor/agents/` を正本とし、`.codex/agents/` は互換補助とする
 - AI PMを事業Orchestratorとし、Ready判定、Task Brief、依存関係、レビュー、エスカレーションを管理する
 - 各WorkstreamにLeadを置き、Specialistは独立した具体タスクがある場合のみ一時的に起動する
 - プロジェクト全体の `In Progress` は最大3、各Workstreamは原則1とする
@@ -373,7 +374,7 @@ P25 利用者・離脱者インタビュー → 定量＋定性統合
 
 ---
 
-## 10. 本Chatで決める判断事項
+## 10. 責任者が決める判断事項
 
 ### Phase 0で決める
 
@@ -415,7 +416,7 @@ P25 利用者・離脱者インタビュー → 定量＋定性統合
 | H | D-018〜020 | **確定済み（2026-08-16）**：Phase 0の期限、責任者稼働、費用上限 |
 | I | D-021 | **確定済み（2026-08-16）**：Phase 1の期間・責任者時間・追加開発費上限 |
 
-すべて本Chat内で扱い、各議題ブロックの判断が完了するたびにDecision Recordと関連Issueを更新する。
+判断は責任者との対話（主にCursor）で行い、会話履歴は正本にしない。各議題ブロックの判断が完了するたびにDecision Recordと関連Issueを更新する。
 
 ### 判断記録の形式
 

@@ -19,6 +19,51 @@ jobs:
       - name: Validate documentation and governance files
         shell: pwsh
         run: ./scripts/check-docs.ps1
-      - name: Validate Codex agent definitions
+      - name: Validate Cursor and Codex agent definitions
         shell: bash
-        run: python3 -c "import pathlib,tomllib; files=list(pathlib.Path('.codex/agents').glob('*.toml')); [tomllib.loads(p.read_text(encoding='utf-8')) for p in files]; print(f'Validated {len(files)} agent definitions')"
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, tomllib, sys
+
+          errors = []
+          required = [
+              "business-orchestrator.md",
+              "product-lead.md",
+              "marketing-lead.md",
+              "data-lead.md",
+              "legal-lead.md",
+              "validation-lead.md",
+              "gate-reviewer.md",
+          ]
+          agents_dir = pathlib.Path(".cursor/agents")
+          for name in required:
+              path = agents_dir / name
+              if not path.is_file():
+                  errors.append(f"missing {path}")
+                  continue
+              text = path.read_text(encoding="utf-8")
+              match = re.match(r"^---\n(.*?)\n---", text, re.S)
+              if not match:
+                  errors.append(f"{path} is missing YAML frontmatter")
+                  continue
+              frontmatter = match.group(1)
+              if not re.search(r"^name:\s+\S+", frontmatter, re.M):
+                  errors.append(f"{path} is missing name")
+              if not re.search(r"^description:\s+\S+", frontmatter, re.M):
+                  errors.append(f"{path} is missing description")
+              if name == "gate-reviewer.md" and not re.search(r"^readonly:\s+true\s*$", frontmatter, re.M):
+                  errors.append("gate-reviewer.md must set readonly: true")
+
+          toml_files = list(pathlib.Path(".codex/agents").glob("*.toml"))
+          if len(toml_files) != 7:
+              errors.append(f"expected 7 Codex compatibility files, found {len(toml_files)}")
+          for path in toml_files:
+              tomllib.loads(path.read_text(encoding="utf-8"))
+
+          if errors:
+              print("Agent definition checks failed:")
+              for error in errors:
+                  print(f"- {error}")
+              sys.exit(1)
+          print(f"Validated {len(required)} Cursor agents and {len(toml_files)} Codex compatibility files")
+          PY

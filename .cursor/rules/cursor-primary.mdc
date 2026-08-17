@@ -1,0 +1,13 @@
+---
+description: Cursor is the primary GYOJI-CHO execution environment. Apply branch, role, WIP, and approval rules.
+alwaysApply: true
+---
+
+# Cursor-first execution
+
+- Primary tool is Cursor. Read `AGENTS.md` and the assigned Task Brief before editing.
+- Role prompts live in `.cursor/agents/`. `.codex/agents/` is a compatibility copy only.
+- AI branches use `cursor/<task-id>-<short-slug>`. Do not push, open a PR, publish, or change external services without explicit user approval.
+- Work one Task ID or `OPS-###` at a time. Keep In Progress at 3 or fewer globally and 1 per Workstream.
+- Delegate independent Workstream work to the matching `.cursor/agents/` subagent. Use `gate-reviewer` for Phase Gates; it must not author the artifact.
+- Stop for new or changed D-IDs, budget, contracts, publication, personal data, destructive operations, Gate exceptions, or scope beyond the Task Brief.

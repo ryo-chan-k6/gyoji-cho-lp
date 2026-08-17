@@ -13,4 +13,4 @@
 
 日々の状態管理は [GitHub Project #6](https://github.com/users/ryo-chan-k6/projects/6) とGitHub Issuesを正本とする。`task-board.md` は移行済みアーカイブであり、二重更新は行わない。
 
-全体ルールは [`../project-operating-policy.md`](../project-operating-policy.md) を参照する。
+全体ルールは [`../project-operating-policy.md`](../project-operating-policy.md) を参照する。AIの主実行環境はCursorで、共通指示は [`../../AGENTS.md`](../../AGENTS.md)、役割定義は `.cursor/agents/` を正本とする。
